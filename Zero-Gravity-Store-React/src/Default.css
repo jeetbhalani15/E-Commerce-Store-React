@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #d7850a;
+  --primary-hover: #e5ab55;
+  --secondary-color: #eee;
+  --secondary-hover: #cac2c2;
+  --card-tag-color: #ff0000;
+  --text-color: azure;
+  --card-border-color: #323232;
+  --card-background-color: #202020;
+  --card-small-txt-color: #a0a0a0;
+  --login-input-color: #3b4148;
+  --background-color: black;
+  --search-bar-color: aliceblue;
+  --underline-color: #a94f04;
+  --login-icon-color: #606468;
+  --login-background-color: #2c3338;
+  --login-txt-color: #606468;
+  --login-input-hover: #434a52;
+  --login-label-color: #363b41;
+}
+/* 
+DARK MODE CSS
+*/
+ .dark {
+  --primary-color: #d7850a;
+  --primary-hover: #e5ab55;
+  --secondary-color: #eee;
+  --secondary-hover: #cac2c2;
+  --card-tag-color: #ff0000;
+  --text-color: azure;
+  --card-border-color: #323232;
+  --card-background-color: #3a3936;
+  --card-small-txt-color: #a0a0a0;
+  --login-input-color: #3b4148;
+  --background-color: black;
+  --search-bar-color: aliceblue;
+  --underline-color: #a94f04;
+  --login-icon-color: #606468;
+  --login-background-color: #2c3338;
+  --login-txt-color: #606468;
+  --login-input-hover: #434a52;
+  --login-label-color: #363b41;
+  --white-color-txt: azure;
+}
+
+.light {
+  --text-color: #312f3a;
+  --background-color: rgb(250, 246, 246);
+  --white-color-txt: azure;
+  --search-bar-color: rgb(179 179 179);
+  --card-border-color: #d1c5b9;
+  --card-background-color: #3a3936;
+}
