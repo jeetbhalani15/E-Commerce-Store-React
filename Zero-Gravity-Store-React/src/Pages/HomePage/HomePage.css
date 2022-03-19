@@ -1,0 +1,296 @@
+
+/* HOME PAGE CSS */
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+    color: var(--white-color-txt);
+    font-size: 1.4rem;
+}
+.links ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    
+}
+.links a{
+    color: var(--white-color-txt);
+    margin-left: 4.5rem;
+    display: inline-block;
+    font-size: 1.4rem;
+}
+.links a:hover{
+    color: rgb(252, 195, 175);
+    transform: scale(1.05);
+}
+.nav-action-btn{
+    margin-left: 2rem;
+}
+/* 
+landing logo
+*/
+.landing-img{
+    position: relative;
+    padding: 4rem;
+}
+.title-style{
+    color: #e5ab55;
+    font-family: system-ui;
+}
+.word-gap{
+    color: var(--card-text);
+    line-height: 2rem;
+    letter-spacing: 1rem;
+}
+.hero-img{
+    margin-top: -15rem;
+    width: 108%;
+    height: 64rem;
+    opacity: 0.8;
+    margin-left: -6rem;
+}
+.hero-title{
+    font-size: 3rem;
+    position: absolute;
+    top: 30%;
+    right: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-solid {
+    background-color: none
+}
+.hero-btn {
+    margin-left: -4rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    text-underline-position: under;
+    text-decoration-line: underline;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgba(245, 245, 245, 0.6);
+    padding: 0rem;
+    margin-top: 1rem;
+}
+.genre-items{
+    padding: 2rem;
+    width: 24rem;
+    border-radius: 8px;
+}
+.partner-items{
+    padding: 5rem;
+    width: 20rem;
+    border-radius: 8px;
+}
+.genre-logo{
+   width: 20rem;
+}
+.partner-logo{
+   width: 10rem;
+}
+.hero-catergory{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.genre{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+/* 
+LANDING PAGE CARD CSS
+*/
+
+.card-body{
+    color: var(--text-color);
+    font-weight: 600;
+}
+.card-price{
+    display: flex;
+    gap: 1rem;
+    color: var(--text-color);
+}
+.line {
+    text-decoration: line-through;
+    opacity: 1;
+    font-weight: 600;
+}
+.card-border{
+    border-radius: 14px;
+    padding: 2rem;
+    margin-left: 1rem;
+    max-width: 24%;
+}
+.card-body{
+    color: var(--text-color);
+}
+.card-btn{
+    margin-top: 1rem;
+    padding: 8px 30px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    border: none;
+}
+.card-img{
+    position: relative;
+    width: 19rem;
+    height: 22.5rem;
+    border-radius: 8px;
+}
+.cart-heading{
+    opacity: 99%;
+    font-size: xx-large;
+    border-bottom: 4px solid var(--underline-color);
+    padding: 1rem;
+    color: var(--text-color);
+}
+.my-card{
+    margin-top: -9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+}
+.card-content{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    height: 5rem;   
+    font-size: large; 
+}
+.footer-txt{
+    color: var(--text-color);
+}
+footer{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+/* 
+@ media screem
+*/
+@media screen and (max-width: 870px) {
+     main{
+         width: 60%;
+     }
+    .search-bar {
+        display: none;
+    }
+    .nav-action-btn {
+        margin-left: 12rem;
+    }
+    .hero-img {
+        margin-top: -10rem;
+        height: 64rem;
+        opacity: 0.8;
+        margin-left: 6rem;
+    }
+    .hero-title {
+        right: 7%;
+    }
+    .cart-content {
+        flex-direction: column;
+    }
+    .genre-items {
+        padding: 2rem;
+        width: 22rem;
+        border-radius: 8px;
+    }
+    .partner-items {
+        padding: 4rem;
+        width: 11rem;
+        border-radius: 8px;
+    }
+    .my-cart {
+    margin-left: 30rem;
+    }
+
+}
+@media screen and (max-width: 670px) {
+     main{
+         width: 50%;
+     }
+    .genre-logo {
+        width: 12rem;
+    }
+    .genre-items {
+        padding: 2rem;
+        width: 15rem;
+        border-radius: 8px;
+    }
+    .partner-logo {
+        width: 6rem;
+    }
+    .partner-items {
+        padding: 2rem;
+        width: 1rem;
+        border-radius: 8px;
+    }
+    .hero-title {
+        font-size: 2rem;
+        right: 7%;
+    }
+    .search-bar {
+        display: none;
+    }
+    .nav-action-btn {
+        margin-left: 12rem;
+    }
+    .hero-img {
+        margin-top: -10rem;
+        height: 64rem;
+        opacity: 0.8;
+        margin-left: 6rem;
+    }
+
+}
+@media screen and (max-width: 470px) {
+    
+    main{
+        width: 24%;
+    }
+    .search-bar {
+        display: none;
+    }
+    .partner-logo {
+        width: 4rem;
+    }
+    .genre-items {
+        padding: 2rem;
+        width: 10rem;
+        border-radius: 8px;
+    }
+
+}
+
+
+  
