@@ -72,20 +72,20 @@ export  function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link className="icon-span" to="/Wishlist">
+                {/* <Link className="icon-span" to="/Wishlist"> */}
                   <span className="icon">
                     <i className="fa fa-heart"></i>
                   </span>
                   <span>Wishlist</span>
-                </Link>
+                {/* </Link> */}
               </li>
               <li>
-                <Link className="icon-span" to="/Cart">
+                {/* <Link className="icon-span" to="/Cart"> */}
                   <span className="icon">
                     <i className="fa fa-shopping-cart"></i>
                   </span>
                   <span>Cart</span>
-                </Link>
+                {/* </Link> */}
               </li>
               {/* <li>
                 <button className="toggle-btn">

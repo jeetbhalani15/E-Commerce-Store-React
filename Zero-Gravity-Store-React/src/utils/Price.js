@@ -1,5 +1,5 @@
 /**
- * Filter json array based on rating prop
+ * Filter Array By price range
  * @param {array} products - Array of product objects
  * @param {string} price - minimum price.
  * @returns {array} - Filtered array of objects.

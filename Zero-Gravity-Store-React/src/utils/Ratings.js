@@ -1,7 +1,7 @@
 /**
- * Filter json array based on rating param
+ 
  * @param {array} products - Array of product objects
- * @param {string} rating - minimum rating.
+ * @param {string} rating - string for rating.
  * @returns {array} - Filtered array of objects.
  */
 
