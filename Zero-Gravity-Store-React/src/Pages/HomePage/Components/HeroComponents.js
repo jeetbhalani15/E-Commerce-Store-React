@@ -1,12 +1,14 @@
- import hero_img from "../../../Asserts/Images/langing-img.jpg";
- import pc_game_logo from "../../../Asserts/Images/pc-game-logo.png";
- import ps_logo from "../../../Asserts/Images/ps-logo.png";
- import xbox_logo from "../../../Asserts/Images/xbox-logo3.jpg";
- import valo_logo from "../../../Asserts/Images/valorant-Logo.png";
- import fh_logo from "../../../Asserts/Images/fh-logo.png";
- import pubg_logo from "../../../Asserts/Images/pubg.jpg";
- import rockstar_logo from "../../../Asserts/Images/rs-logo.png";
- import ue_logo from "../../../Asserts/Images/unreal-Engine-logo.png";
+import {
+    hero_img,
+    pc_game_logo,
+    ps_logo,
+    xbox_logo,
+    valo_logo,
+    fh_logo,
+    pubg_logo,
+    rockstar_logo,
+    ue_logo,
+  }  from "../../../Asserts/index"
  import {Link} from "react-router-dom";
  function HeroComponents (){
     return(
