@@ -10,7 +10,6 @@
     top: 62%;
     right: 6px;
     background-color: #505050;
-    /* background: transparent; */
     padding: 3px;
     border-radius: 3px;
   }
@@ -49,3 +48,8 @@
   .floating-ic{
      cursor: pointer;
   }
+  .error-msg{
+    color: rgb(161 23 23);
+
+  }
+  

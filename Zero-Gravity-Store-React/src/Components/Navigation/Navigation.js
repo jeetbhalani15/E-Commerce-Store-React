@@ -1,7 +1,25 @@
 import "./Navigation.css"
 import logo from "../../Asserts/Images/hero-logo.png";
 import {Link} from "react-router-dom";
+import { useState, useEffect } from "react";
+import {  useFliters } from "../../Contexts/Filter-context";
 export  function Navigation() {
+
+  const [search,setSearch]= useState("");
+  const { dispatch } = useFliters();
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      dispatch({
+        type: "SEARCH",
+        payload: search,
+      });
+    }, 500);
+
+    return () => clearTimeout(id);
+  }, [dispatch, search]);
+
+
     return (
       <header>
         <div className="container">
@@ -38,8 +56,9 @@ export  function Navigation() {
             <input
               className="search-bar-input"
               type="text"
-              placeholder="Type to
-          search.."
+              value={search}
+              onChange={(e)=> setSearch(e.target.value)}
+              placeholder="Type to search.."
             />
           </div>
           <div className="nav-action-btn">
@@ -53,20 +72,20 @@ export  function Navigation() {
                 </Link>
               </li>
               <li>
-                <Link className="icon-span" to="/Wishlist">
+                {/* <Link className="icon-span" to="/Wishlist"> */}
                   <span className="icon">
                     <i className="fa fa-heart"></i>
                   </span>
                   <span>Wishlist</span>
-                </Link>
+                {/* </Link> */}
               </li>
               <li>
-                <Link className="icon-span" to="/Cart">
+                {/* <Link className="icon-span" to="/Cart"> */}
                   <span className="icon">
                     <i className="fa fa-shopping-cart"></i>
                   </span>
                   <span>Cart</span>
-                </Link>
+                {/* </Link> */}
               </li>
               {/* <li>
                 <button className="toggle-btn">

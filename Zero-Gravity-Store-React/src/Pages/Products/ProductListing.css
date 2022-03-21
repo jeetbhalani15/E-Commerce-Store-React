@@ -173,7 +173,7 @@ Toggle Button CSS
 }
 .big-wrapper.dark .toggle-btn i:first-child {
   display: none;
-} 
+}
 
 /*  FILTER CSS  */
 
@@ -190,9 +190,22 @@ Toggle Button CSS
   justify-content: space-between;
 }
 .slider {
-  width: 18rem;
+  width: 17rem;
+  -webkit-appearance: none;
+  height: 16px;
+  /* background: linear-gradient( 90deg, wheat 50%, white 50% ); */
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px 1px black;
+  opacity: 0.7;
+  position: relative;
   margin-left: 1rem;
   margin-top: 1rem;
+}
+.slider:hover {
+  opacity: 1;
 }
 .sidebar-list {
   display: flex;
@@ -244,7 +257,7 @@ a {
 .drawer__nav {
   display: flex;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: -1rem;
 }
 .drawer {
   display: flex;
@@ -272,8 +285,8 @@ a {
 }
 .ratings {
   position: absolute;
-  top: 62%;
-  right: 6px;
+  top: 57%;
+  right: 7px;
   background-color: #505050;
   padding: 3px;
   border-radius: 3px;
@@ -304,7 +317,41 @@ a {
   height: 22.5rem;
   border-radius: 8px;
 }
-
+.tabs {
+  margin-top: 1rem;
+  padding: 3rem;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  grid-gap: 4rem;
+  gap: 4rem;
+  margin-bottom: -2rem;
+  margin-left: 27rem;
+}
+.tab-btn {
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  color: white;
+}
+.tab-btn:hover {
+  color: rgb(252, 195, 175);
+}
+.sort-btn {
+  border-bottom: white;
+}
+.sort-btn:hover {
+  border-bottom: 2px solid wheat;
+}
+.reset:hover {
+  border-bottom: 2px solid white;
+}
+.reset-btn {
+  background: none;
+  border: none;
+  font-family: monospace;
+  color: white;
+}
 /* 
 @ media screem
 */
