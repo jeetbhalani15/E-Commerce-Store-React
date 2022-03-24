@@ -9,9 +9,7 @@ import axios from "axios";
 import { useAuth } from "../../../Contexts/Auth-context";
 
 export function Login() {
-  const {
-    authState , authDispatch
-  } = useAuth();
+  const { authState, authDispatch } = useAuth();
 
   const navigate = useNavigate();
 
@@ -23,7 +21,7 @@ export function Login() {
   const dummyData = {
     email: "testguest@gmail.com",
     password: "Abc@1234",
-  }
+  };
 
   const formReducer = (state, { type, payload }) => {
     switch (type) {
@@ -40,26 +38,25 @@ export function Login() {
 
   const [formState, formDispatch] = useReducer(formReducer, initialState);
 
-  const LoginHandler = async(e)=>{
-        e.preventDefault();
-    try{
-      console.log("hi")
-      console.log(formState)
-      const userData = await axios.post("/api/auth/login",{
-      email: formState.email,
-      password: formState.password,
-    });
-    console.log(userData)
-     localStorage.getItem('token', userData.data.encodedToken);
-     authDispatch({type:'LOG_IN',payload : userData.data.encodedToken})
-     navigate("/productListing")
-     alert("logged in")
-  }catch(error){
-     alert(error)
-     console.log(error)
-  }
-
-  }
+  const LoginHandler = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("hi");
+      console.log(formState);
+      const userData = await axios.post("/api/auth/login", {
+        email: formState.email,
+        password: formState.password,
+      });
+      console.log(userData);
+      localStorage.getItem("token", userData.data.encodedToken);
+      authDispatch({ type: "LOG_IN", payload: userData.data.encodedToken });
+      navigate("/productListing");
+      alert("logged in");
+    } catch (error) {
+      alert(error);
+      console.log(error);
+    }
+  };
   return (
     <div className="html">
       <div className="background">
@@ -77,11 +74,12 @@ export function Login() {
             </div>
             <span className="pd">Login with 0`Gravity Account</span>
             <div className="login-credals">
-
-              <form action="#" method="#" className="form login"
-              onSubmit={LoginHandler}
-                >
-
+              <form
+                action="#"
+                method="#"
+                className="form login"
+                onSubmit={LoginHandler}
+              >
                 <div className="form__field">
                   <label className="auth-label" htmlFor="login__username">
                     <span className="auth-icon">
@@ -97,8 +95,12 @@ export function Login() {
                     value={formState.email}
                     placeholder="Email address"
                     required
-                    onChange={(e)=>
-                    formDispatch({type:'SET_EMAIL', payload :e.target.value })}
+                    onChange={(e) =>
+                      formDispatch({
+                        type: "SET_EMAIL",
+                        payload: e.target.value,
+                      })
+                    }
                   />
                 </div>
 
@@ -109,17 +111,26 @@ export function Login() {
                     </span>
                     <span className="hidden">Password</span>
                   </label>
-                  <InputPwd 
-                  placeholderTxt={"Password"}
-                  value={formState.password}
-                  onChangeHandler={(e)=>
-                    formDispatch({type:'SET_PASSWORD', payload :e.target.value })} />
+                  <InputPwd
+                    placeholderTxt={"Password"}
+                    value={formState.password}
+                    onChangeHandler={(e) =>
+                      formDispatch({
+                        type: "SET_PASSWORD",
+                        payload: e.target.value,
+                      })
+                    }
+                  />
                 </div>
+                <div className="form__field"></div>
                 <div className="form__field">
-                </div>
-                <div className="form__field">
-                  <button type="submit"
-                  onClick={LoginHandler} className="auth-signup-btn">LOG IN</button>
+                  <button
+                    type="submit"
+                    onClick={LoginHandler}
+                    className="auth-signup-btn"
+                  >
+                    LOG IN
+                  </button>
                 </div>
               </form>
 
@@ -130,16 +141,21 @@ export function Login() {
                 </Link>
               </p>
               <div className="guest-btn">
-              
-                <p className="guest-login-btn"
-                 onClick={(event) => {
-                  formDispatch({ type: 'SET_EMAIL', payload: dummyData.email });
-                  formDispatch({
-                    type: 'SET_PASSWORD',
-                    payload: dummyData.password,
-                  });
-                }
-              }>Use Guest Credential</p>
+                <p
+                  className="guest-login-btn"
+                  onClick={(event) => {
+                    formDispatch({
+                      type: "SET_EMAIL",
+                      payload: dummyData.email,
+                    });
+                    formDispatch({
+                      type: "SET_PASSWORD",
+                      payload: dummyData.password,
+                    });
+                  }}
+                >
+                  Use Guest Credential
+                </p>
               </div>
             </div>
           </div>

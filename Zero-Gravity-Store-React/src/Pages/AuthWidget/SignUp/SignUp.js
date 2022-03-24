@@ -8,8 +8,6 @@ import { useNavigate } from "react-router";
 import { InputPwd } from "../InputPwd";
 import { useAuth } from "../../../Contexts/Auth-context";
 
-
-
 export function SignUp() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -142,25 +140,22 @@ export function SignUp() {
       try {
         console.log("try");
         const userData = await axios.post(`/api/auth/signup`, {
-           firstName: formState.firstName,
-           lastName: formState.lastName,
-           email: formState.email,
-           password: formState.password,
-         });
-         localStorage.setItem("token", userData.data.encodedToken);
-         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
-         navigate("/ProductListing");
-         alert("Account Made Successfully!!!");
-       } catch (err) {
-         console.log(formValidation());
-         alert(err);
-         console.log(err);
-       }
-     }
-   };
-      
-
-
+          firstName: formState.firstName,
+          lastName: formState.lastName,
+          email: formState.email,
+          password: formState.password,
+        });
+        localStorage.setItem("token", userData.data.encodedToken);
+        authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
+        navigate("/ProductListing");
+        alert("Account Made Successfully!!!");
+      } catch (err) {
+        console.log(formValidation());
+        alert(err);
+        console.log(err);
+      }
+    }
+  };
 
   return (
     <div className="html">
