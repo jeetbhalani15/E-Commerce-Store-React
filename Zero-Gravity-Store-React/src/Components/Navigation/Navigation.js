@@ -3,8 +3,10 @@ import logo from "../../Asserts/Images/hero-logo.png";
 import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import {  useFliters } from "../../Contexts/Filter-context";
+import { useAuth } from "../../Contexts/Auth-context";
 export  function Navigation() {
 
+  const {authState, authDispatch} = useAuth();
   const [search,setSearch]= useState("");
   const { dispatch } = useFliters();
 
@@ -64,28 +66,34 @@ export  function Navigation() {
           <div className="nav-action-btn">
             <ul className="flex">
               <li>
+              { authState.token === null ? 
                 <Link className="icon-span" to="/Login">
                   <span className="icon">
                     <i className="fa fa-user"></i>
                   </span>
                   <span>login</span>
-                </Link>
+                </Link> :  <Link className="icon-span" to="/Logout">
+                  <span className="icon">
+                    <i className="fa fa-user"></i>
+                  </span>
+                  <span>Log Out</span>
+                </Link>  }
               </li>
               <li>
-                {/* <Link className="icon-span" to="/Wishlist"> */}
+                <Link className="icon-span" to="/Wishlist">
                   <span className="icon">
                     <i className="fa fa-heart"></i>
                   </span>
                   <span>Wishlist</span>
-                {/* </Link> */}
+                </Link>
               </li>
               <li>
-                {/* <Link className="icon-span" to="/Cart"> */}
+                <Link className="icon-span" to="/Cart">
                   <span className="icon">
                     <i className="fa fa-shopping-cart"></i>
                   </span>
                   <span>Cart</span>
-                {/* </Link> */}
+                </Link>
               </li>
               {/* <li>
                 <button className="toggle-btn">
