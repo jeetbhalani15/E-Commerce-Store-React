@@ -77,7 +77,7 @@ export function Navigation() {
               )}
             </li>
             <li>
-              <Link className="icon-span" to="/Wishlist">
+              <Link className="icon-span" to={authState.token === null ? "/Login" : "/Wishlist"}>
                 <span className="icon">
                   <i className="fa fa-heart"></i>
                 </span>
@@ -85,7 +85,7 @@ export function Navigation() {
               </Link>
             </li>
             <li>
-              <Link className="icon-span" to="/Cart">
+              <Link className="icon-span" to={authState.token === null ? "/Login" : "/Cart"}>
                 <span className="icon">
                   <i className="fa fa-shopping-cart"></i>
                 </span>

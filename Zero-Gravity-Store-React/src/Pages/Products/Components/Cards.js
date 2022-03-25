@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../Contexts/Auth-context";
 export function Cards({ product }) {
+  const{authState} = useAuth();
   return (
     <div className="card-vertical-box flex card-border">
       <div className="vertical-card flex">
@@ -23,9 +25,8 @@ export function Cards({ product }) {
             {product.Category}
           </div>
           <div>
-            {" "}
-            <Link to="/Cart">
-              {" "}
+          
+             <Link to={authState.token === null ? "/Login" : "/cart"}>
               <button className="card-btn">Add To Cart</button>
             </Link>
           </div>
