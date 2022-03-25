@@ -122,10 +122,33 @@
     margin: 0.875rem;
   }
   #toggle{
+    color: #c49c6d;
+    font-size: 2rem;
     position: absolute;
     bottom: 0%;
-    right: 1%;
-    top: 18%;
+    right: 2%;
+    top: 21%;
+  }
+  .eye-btn{
+    background: none;
+    border: none;
+    padding: 2rem;
+    /* padding: 2rem; */
+    position: absolute;
+    right: 2%;
+  }
+  .form-err-icon{
+    color: crimson;
+    font-size: 1.6rem;
+  }
+  .form-err{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2.3rem;
+    max-width: 42rem;
+    font-size: 1.4rem;
+    color: red;
   }
   
   
@@ -148,6 +171,7 @@
   }
   
   .login .form__input {
+    color: azure;
     background-color: var(--login-input-color);
   }
   
@@ -173,4 +197,24 @@
     margin-top: 1.5rem;
     text-align: center;
     color: var(--card-small-txt-color);
+  }
+
+  .guest-login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: bisque;
+    font-weight: 600;
+    font-family: monospace;
+    font-size: smaller;
+    
+  }
+  .guest-btn{
+    width: 18rem; 
+    margin-left: 13rem;
+  }
+  .guest-btn:hover{
+     
+    border-bottom: 2px solid bisque;
+    cursor: pointer;
   }
