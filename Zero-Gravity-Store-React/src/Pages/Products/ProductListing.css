@@ -81,7 +81,7 @@ button.link-no-style {
 }
 .search-bar {
   display: flex;
-  margin-left: 20rem;
+  margin-left: 19rem;
 }
 .activeSearchBar {
   background-color: var(--text-color);
@@ -311,6 +311,14 @@ a {
   border-radius: 8px;
   border: none;
 }
+.go-to-cart-btn{
+  background-color: green;
+  margin-top: 1rem;
+  padding: 8px 30px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
 .card-img {
   position: relative;
   width: 19rem;
@@ -343,7 +351,11 @@ a {
 .sort-btn:hover {
   border-bottom: 2px solid wheat;
 }
+.sort-btn:active{
+  border-bottom: 2px solid wheat;
+}
 .reset:hover {
+  transform: scale(1.05);
   border-bottom: 2px solid white;
 }
 .reset-btn {

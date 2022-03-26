@@ -140,6 +140,10 @@
     color: rgb(252, 195, 175);
     transform: scale(1.05);
   }
+  .nav-action-links a:hover {
+    color: rgb(252, 195, 175);
+    transform: scale(1.05);
+  }
   .nav-action-btn {
     margin-left: 2rem;
   }
@@ -187,4 +191,18 @@
   }
   .big-wrapper.dark .toggle-btn i:first-child {
     display: none;
+  }
+
+  .badge-icon{
+    position: absolute;
+    background-color: #ff0000;
+    padding: 6px;
+    border-radius: 50%;
+    top: -7px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .cart-icon{
+    top: -6px;
+    /* right: 3.7%; */
   }

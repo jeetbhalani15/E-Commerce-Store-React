@@ -19,8 +19,8 @@ export function Login() {
   };
 
   const dummyData = {
-    email: "testguest@gmail.com",
-    password: "Abc@1234",
+    email: "guest@gmail.com",
+    password: "Abc@1234"
   };
 
   const formReducer = (state, { type, payload }) => {
@@ -47,8 +47,8 @@ export function Login() {
         email: formState.email,
         password: formState.password,
       });
-      console.log(userData);
-      localStorage.getItem("token", userData.data.encodedToken);
+      console.log(authState.token);
+      localStorage.setItem("token", userData.data.encodedToken);
       authDispatch({ type: "LOG_IN", payload: userData.data.encodedToken });
       navigate("/productListing");
       alert("logged in");
