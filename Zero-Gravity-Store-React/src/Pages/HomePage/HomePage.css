@@ -70,6 +70,9 @@ landing logo
 .btn-solid {
     background-color: none
 }
+.hero-btn:hover{
+    transform: scale(1.08);
+}
 .hero-btn {
     margin-left: -4rem;
     background-color: transparent;
@@ -89,10 +92,16 @@ landing logo
     width: 24rem;
     border-radius: 8px;
 }
+.genre-items:hover{
+    transform: scale(1.08);
+}
 .partner-items{
     padding: 5rem;
     width: 20rem;
     border-radius: 8px;
+}
+.partner-items:hover{
+    transform: scale(1.08);
 }
 .genre-logo{
    width: 20rem;

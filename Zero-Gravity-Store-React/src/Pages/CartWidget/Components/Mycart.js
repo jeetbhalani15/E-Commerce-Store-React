@@ -1,67 +1,54 @@
 import { Footer } from "../../../Components/Footer/Footer";
 import { Navigation } from "../../../Components/Navigation/Navigation";
+import { useAuth } from "../../../Contexts/Auth-context";
+import { useCart } from "../../../Contexts/Cart-context";
+import { CartInvoice } from "./Cart-Invoice";
+import { Link } from "react-router-dom";
 import { CartProducts } from "./CartProducts";
 import "./Mycart.css";
 
 export function MyCart() {
+  const { cartState } = useCart();
+  const {authState} = useAuth();
+
   return (
     <>
       <div className="big-wrapper dark">
         <Navigation />
 
-        <main>
-          <div className="my-cart">
-            <div className="cart-content">
-              <h1 className="font-size">My Cart</h1>
-              <CartProducts />
-            </div>
-            <div className="cart-summary-content">
-              <div className="cart-summary">
-                <div className="cart-summary-header">
-                  <h1>Games and Apps Summary</h1>
-                </div>
-                <div className="cart-elements">
-                  <div className="cart-items">
-                    <div className="cart-price">
-                      <span>Price</span>
-                    </div>
-                    <div className="cart-price-value">
-                      <span>₹939.00</span>
-                    </div>
-                  </div>
-                  <div className="cart-items">
-                    <div className="cart-coupon">
-                      <span>Coupon Discount</span>
-                    </div>
-                    <div className="cart-coupon-value">
-                      <span>₹750.00</span>
-                    </div>
-                  </div>
-                  <div className="cart-items">
-                    <div className="cart-tax">
-                      <span>Taxes</span>
-                    </div>
-                    <div className="cart-tax-value">
-                      <span className="tax-color">Calculated at Checkout</span>
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="cart-items">
-                    <div className="cart-subtotal">
-                      <span>Subtotal</span>
-                    </div>
-                    <div className="cart-subtotal-value">
-                      <span className="tax">₹3,188.00</span>
-                    </div>
-                  </div>
-                  <div className="cart-btn">
-                    <button className="cart-btn">CHECK OUT</button>
-                  </div>
-                </div>
+        {cartState.cartProducts.length !== 0 ? (
+          <main>
+            <div className="my-cart">
+              <div className="cart-content">
+                <h1 className="font-size">My Cart</h1>
+                {cartState.cartProducts.map((product) => {
+                  return <CartProducts key={product._id} product={product} />;
+                })}
               </div>
+              <CartInvoice />
             </div>
+          </main>
+        ) : (
+          <div className="empty-cart">
+            {/* <img className="empty-cart-img" src={emptyCart} alt="image" /> */}
+            {authState.token 
+              ? (
+              <>
+                <h1>Your cart is empty!</h1>
+                <button class="btn btn-primary cart-btn pd-left">
+                  <Link to="/productListing">Shop Now</Link>
+                </button>
+              </>
+            ) : (
+              <>
+                <h1>Login to see the items in cart</h1>
+                <button class="btn btn-primary cart-btn pd-left">
+                  <Link to="/login">Login Now</Link>
+                </button>
+              </>
+            )}
           </div>
-        </main>
+        )}
 
         <Footer />
       </div>

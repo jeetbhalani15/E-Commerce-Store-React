@@ -1,5 +1,32 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../Contexts/Auth-context";
+import { useCart } from "../../../Contexts/Cart-context";
+
 export function Cards({ product }) {
+  const navigate = useNavigate();
+  const {authState} = useAuth();
+  const {cartState, cartDispatch} = useCart();
+
+  const addToCart = async (item) => {
+    console.log(authState)
+    if(authState.token){
+      console.log("if")
+        try {
+          console.log("try")
+            const cartItems = await axios.post("/api/user/cart", { cart : item }, { headers : { authorization: authState.token } }); 
+            cartDispatch({type : "ADD_TO_CART", payload : item });
+            
+        } catch (error) {
+            alert(error);
+        }
+    }
+    
+    else {
+        navigate("/login");
+    }
+     
+}
   return (
     <div className="card-vertical-box flex card-border">
       <div className="vertical-card flex">
@@ -23,11 +50,20 @@ export function Cards({ product }) {
             {product.Category}
           </div>
           <div>
-            {" "}
-            <Link to="/Cart">
-              {" "}
-              <button className="card-btn">Add To Cart</button>
-            </Link>
+          {cartState.cartProducts.find((item)=> item._id === product._id)
+           ? ( 
+             <button 
+              className="go-to-cart-btn"><Link to="/Cart">Go to Cart</Link>
+              </button>
+              )
+            : (  <button
+              onClick={()=>addToCart(product)} 
+              className="card-btn">Add To Cart
+              </button>
+              )}
+             
+            
+            
           </div>
         </div>
       </div>

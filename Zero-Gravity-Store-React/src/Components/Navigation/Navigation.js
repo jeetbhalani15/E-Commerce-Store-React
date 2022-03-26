@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useFliters } from "../../Contexts/Filter-context";
 import { useAuth } from "../../Contexts/Auth-context";
+import { useCart } from "../../Contexts/Cart-context";
+
 export function Navigation() {
   const { authState, authDispatch } = useAuth();
   const [search, setSearch] = useState("");
   const { dispatch } = useFliters();
-
+  const {cartState} = useCart(); 
   useEffect(() => {
     const id = setTimeout(() => {
       dispatch({
@@ -59,7 +61,7 @@ export function Navigation() {
         </div>
         <div className="nav-action-btn">
           <ul className="flex">
-            <li>
+            <li className="nav-action-links">
               {authState.token === null ? (
                 <Link className="icon-span" to="/Login">
                   <span className="icon">
@@ -79,7 +81,7 @@ export function Navigation() {
             <li>
               <Link className="icon-span" to="/Wishlist">
                 <span className="icon">
-                  <i className="fa fa-heart"></i>
+                <i className="fa fa-heart"><span className="badge-icon">0</span></i>
                 </span>
                 <span>Wishlist</span>
               </Link>
@@ -87,7 +89,7 @@ export function Navigation() {
             <li>
               <Link className="icon-span" to="/Cart">
                 <span className="icon">
-                  <i className="fa fa-shopping-cart"></i>
+                <i className="fa fa-shopping-cart"><span className="badge-icon cart-icon">{cartState.cartProducts.length}</span></i>
                 </span>
                 <span>Cart</span>
               </Link>

@@ -22,7 +22,7 @@
     height: 24rem;
     position: relative;
     color: var(--card-text);
-    padding: 0 23rem;
+    /* padding: 0 23rem; */
     background-color: var(--card-background-color);
 }
 .game-tag{
@@ -42,7 +42,7 @@
 }
 .card-header{
     margin-right: 3rem;
-    margin-left: -20rem;
+    margin-left: -9rem;
 }
 .card-text {
     width: fit-content;
@@ -81,6 +81,14 @@
     color: rgba(245, 245, 245, 0.6);
     padding: 0rem;
 }
+.empty-cart{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
 
 /* 
 Cart-summary CSS
@@ -91,8 +99,21 @@ Cart-summary CSS
     max-width: fit-content;
 }
 .cart-summary-header{
+    position: relative;
     padding: 1rem;
     font-size: 2rem;
+}
+.quantity-box{
+    display: flex;
+    font-size: 17px;
+    right: 9%;
+    top: 69%;
+    position: absolute;
+    width: 4rem;
+    border-radius: 20px;
+    border: 2px solid #b5b3b2;
+    justify-content: center;
+    align-items: center;
 }
 .cart-content{
     display: flex;
@@ -125,4 +146,32 @@ Cart-summary CSS
 }
 .tax-color{
     color: var(--card-small-txt-color);
+}
+.add-on-btns:hover{
+    opacity: 0.5;
+}
+.add-on-btns{
+    color: azure;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 0px 12px;
+    border: none;
+    /* border-bottom: 3px solid white; */
+    display: flex;
+}
+.qty-name-tag{
+    position: absolute;
+    right: 49%;
+}
+.add-on-counter{
+    margin-left: 5rem;
+    display: flex;
+    height: 27px;
+    padding: 0rem -0.9rem;
+    background-color: #858585;
+    font-weight: 600;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
 }
