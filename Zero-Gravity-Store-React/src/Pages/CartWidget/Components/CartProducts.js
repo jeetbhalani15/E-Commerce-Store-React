@@ -1,26 +1,14 @@
 import { useCart } from "../../../Contexts/Cart-context";
 import axios from "axios";
 import { useAuth } from "../../../Contexts/Auth-context";
+import { useWishlist } from "../../../Contexts/Wishlist-context";
 
 export function CartProducts({ product }) {
-  const { cartDispatch } = useCart();
+  const { cartDispatch , removeFromCart } = useCart();
   const {authState} = useAuth();
+  const {addToWishlist} = useWishlist();
 
-  const removeFromCart = async (item) => {
-    if (authState.token) {
-      try {
-        const res = await axios.delete(`/api/user/cart/${item._id}`, {
-          headers: { authorization: authState.token },
-        });
-        cartDispatch({ type: "REMOVE_FROM_CART", payload: item });
-        console.log(res);
-      } catch (error) {
-        alert(error);
-      }
-    } else {
-      navigate("/login");
-    }
-  };
+  
   return (
     <>
       <div className="horizontal-card flex">
@@ -49,7 +37,7 @@ export function CartProducts({ product }) {
             <small>Sale ends 2/10/2022 at 9:30 PM</small>
           </div>
           <div className="action-btn">
-            <button className="btn btn-solid">
+            <button onClick={()=>addToWishlist(product)} className="btn btn-solid">
               <i className="fa fa-plus-circle"></i>Move to wishlist
             </button>
             <button

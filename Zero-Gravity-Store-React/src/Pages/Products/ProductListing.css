@@ -311,6 +311,24 @@ a {
   border-radius: 8px;
   border: none;
 }
+.hearts-icon {
+  position: absolute;
+  right: 1.5%;
+  top: 0%;
+  font-size: 26px;
+  color: white;
+  text-shadow: 0 0px 10px rgb(36, 36, 36);
+}
+.fa-heart:hover{
+  color: red;
+}
+.bg {
+  background-color: var(--card-hr-bg);
+  border-radius: 50%;
+}
+.bg:hover{
+  cursor: pointer;
+}
 .go-to-cart-btn{
   background-color: green;
   margin-top: 1rem;
