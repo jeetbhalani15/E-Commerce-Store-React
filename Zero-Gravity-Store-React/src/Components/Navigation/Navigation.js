@@ -5,12 +5,14 @@ import { useState, useEffect } from "react";
 import { useFliters } from "../../Contexts/Filter-context";
 import { useAuth } from "../../Contexts/Auth-context";
 import { useCart } from "../../Contexts/Cart-context";
+import { useWishlist } from "../../Contexts/Wishlist-context";
 
 export function Navigation() {
   const { authState, authDispatch } = useAuth();
   const [search, setSearch] = useState("");
   const { dispatch } = useFliters();
-  const {cartState} = useCart(); 
+  const { cartState } = useCart();
+  const { wishlistState } = useWishlist();
   useEffect(() => {
     const id = setTimeout(() => {
       dispatch({
@@ -81,7 +83,11 @@ export function Navigation() {
             <li>
               <Link className="icon-span" to="/Wishlist">
                 <span className="icon">
-                <i className="fa fa-heart"><span className="badge-icon">0</span></i>
+                  <i className="fa fa-heart">
+                    <span style={{display: wishlistState.wishlistItems.length!== 0 ? "block" : "none" }} className="badge-icon">
+                      {wishlistState.wishlistItems.length}
+                    </span>
+                  </i>
                 </span>
                 <span>Wishlist</span>
               </Link>
@@ -89,7 +95,11 @@ export function Navigation() {
             <li>
               <Link className="icon-span" to="/Cart">
                 <span className="icon">
-                <i className="fa fa-shopping-cart"><span className="badge-icon cart-icon">{cartState.cartProducts.length}</span></i>
+                  <i className="fa fa-shopping-cart">
+                    <span style={{display: cartState.cartProducts.length!== 0 ? "block" : "none" }} className="badge-icon cart-icon">
+                      {cartState.cartProducts.length}
+                    </span>
+                  </i>
                 </span>
                 <span>Cart</span>
               </Link>

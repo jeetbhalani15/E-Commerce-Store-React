@@ -198,11 +198,12 @@
     background-color: #ff0000;
     padding: 6px;
     border-radius: 50%;
-    top: -7px;
+    top: -13px;
+    right: 8%;
     font-size: 13px;
     font-weight: 600;
   }
   .cart-icon{
-    top: -6px;
-    /* right: 3.7%; */
+    top: -13px;
+    right: 3%;
   }

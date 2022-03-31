@@ -20,7 +20,7 @@ export function Login() {
 
   const dummyData = {
     email: "guest@gmail.com",
-    password: "Abc@1234"
+    password: "Abc@1234",
   };
 
   const formReducer = (state, { type, payload }) => {
@@ -40,6 +40,8 @@ export function Login() {
 
   const LoginHandler = async (e) => {
     e.preventDefault();
+    console.log(formState.email)
+    console.log(formState.password)
     try {
       console.log("hi");
       console.log(formState);
