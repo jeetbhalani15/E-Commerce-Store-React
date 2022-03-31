@@ -338,6 +338,7 @@ a {
   border: none;
 }
 .card-img {
+  margin-top: 0;
   position: relative;
   width: 19rem;
   height: 22.5rem;

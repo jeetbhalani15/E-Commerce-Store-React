@@ -5,6 +5,7 @@ import { useCart } from "../../../Contexts/Cart-context";
 import { CartInvoice } from "./Cart-Invoice";
 import { Link } from "react-router-dom";
 import { CartProducts } from "./CartProducts";
+import cartempty from "../../../Asserts/Images/cart-empty-removebg-preview.png"
 import "./Mycart.css";
 
 export function MyCart() {
@@ -30,19 +31,18 @@ export function MyCart() {
           </main>
         ) : (
           <div className="empty-cart">
-            {/* <img className="empty-cart-img" src={emptyCart} alt="image" /> */}
+            <img className="empty-cart-img" src={cartempty} alt="image" />
             {authState.token 
               ? (
               <>
-                <h1>Your cart is empty!</h1>
-                <button class="btn btn-primary cart-btn pd-left">
+                <button class="cart-btn">
                   <Link to="/productListing">Shop Now</Link>
                 </button>
               </>
             ) : (
               <>
-                <h1>Login to see the items in cart</h1>
-                <button class="btn btn-primary cart-btn pd-left">
+                <h1 className="txt-empty-cart">Login to see the items in cart</h1>
+                <button class="cart-btn">
                   <Link to="/login">Login Now</Link>
                 </button>
               </>

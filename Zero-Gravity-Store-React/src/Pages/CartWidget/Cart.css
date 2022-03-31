@@ -144,6 +144,9 @@ Cart-summary CSS
     font-weight: 600;
     color: white;
 }
+.txt-empty-cart{
+    margin-bottom: 2rem;
+}
 .tax-color{
     color: var(--card-small-txt-color);
 }

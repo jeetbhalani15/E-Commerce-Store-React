@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../../Contexts/Auth-context";
 import { useCart } from "../../../Contexts/Cart-context";
 import { useWishlist } from "../../../Contexts/Wishlist-context";
+import wishEmpty from "../../../Asserts/Images/wish-empty3.png"
 
 export function WishlistProducts() {
   const { wishlistState, wishlistDispatch, removeFromWishList } = useWishlist();
@@ -10,10 +11,10 @@ export function WishlistProducts() {
   const { cartState,addToCart } = useCart();
   return (
     <>
-      {/* {console.log(wishlistState.wishlistItems)} */}
-
-      <div className="my-wishlist">
-        <div>
+     <div className="my-wishlist">
+     {wishlistState.wishlistItems.length !==0 ? (
+        <>
+         <div>
           <h1>My Wishlist ({wishlistState.wishlistItems.length})❤️ </h1>
         </div>
         <div className="wishlist-content">
@@ -63,6 +64,29 @@ export function WishlistProducts() {
             </div>
           ))}
         </div>
+        </>):(<div className="empty-cart">
+            <img className="empty-cart-img" src={wishEmpty} alt="image" />
+            <h1 className="wish-empty-txt">Your Wishlist is Empty ‼</h1>
+            {authState.token 
+              ? (
+              <>
+                <button class="cart-btn">
+                  <Link to="/productListing">Shop Now</Link>
+                </button>
+              </>
+            ) : (
+              <>
+                <h1 className="txt-empty-cart">Login to see the items in cart</h1>
+                <button class="cart-btn">
+                  <Link to="/login">Login Now</Link>
+                </button>
+              </>
+            )}
+          </div>)}
+     
+      
+
+
       </div>
     </>
   );

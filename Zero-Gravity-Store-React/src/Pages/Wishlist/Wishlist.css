@@ -76,3 +76,9 @@ h1{
     border: 2px solid rgb(146, 19, 19);
     
 }
+.wish-empty-txt{
+    margin-bottom: 2rem;
+    margin-top: -3rem;
+    font-weight: 500;
+    color: #d64e42;
+}
