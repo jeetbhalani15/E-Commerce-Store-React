@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { FetchProductReducer } from "../Reducers";
+import { Loader } from "../Components/Loader/Loader";
 
 
 const productContext = createContext();
@@ -21,7 +22,7 @@ const fetchProductsData = async()=>{
          const {data} = await axios.get('/api/products');
          console.log(data)
          dispatch({type:"ON_SUCCESS", payload: [...data.products]});
-         console.log()
+         
      } 
     catch{
          dispatch({type:"ON_FAILURE", payload: "Something Wrong At Our End ❗❗"})

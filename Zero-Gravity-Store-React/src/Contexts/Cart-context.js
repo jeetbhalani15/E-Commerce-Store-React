@@ -1,9 +1,10 @@
-
 import axios from "axios";
 import {createContext, useContext, useReducer} from "react";
 import { useNavigate } from "react-router-dom";
 import { cartReducer } from "../Reducers";
 import { useAuth } from "./Auth-context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // CREATING CART CONTEXT
 const CartContext = createContext();
@@ -20,7 +21,6 @@ const CartProvider = ({children})=>{
     //  ADD_TO_CART FUNCTIONS
     const addToCart = async (item) => {
         if (authState.token) {
-          console.log("if");
           try {
             console.log("try");
             const cartItems = await axios.post(
@@ -29,8 +29,27 @@ const CartProvider = ({children})=>{
               { headers: { authorization: authState.token } }
             );
             cartDispatch({ type: "ADD_TO_CART", payload: item });
+            toast.success(' Add to Cart Successfully!!', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark"
+              });
           } catch (error) {
-            alert(error);
+            toast.error(' Something went Wrong!!', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
           }
         } else {
           navigate("/login");
@@ -45,9 +64,27 @@ const CartProvider = ({children})=>{
               headers: { authorization: authState.token },
             });
             cartDispatch({ type: "REMOVE_FROM_CART", payload: item });
-            console.log(res);
+            toast.success(' Remove From Cart Successfully!!', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
           } catch (error) {
-            alert(error);
+            toast.error(' Something went Wrong!!', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
           }
         } else {
           navigate("/login");
@@ -58,6 +95,7 @@ const CartProvider = ({children})=>{
    return (
        <CartContext.Provider value={{ cartState, cartDispatch, addToCart , removeFromCart }}>
            {children}
+           <ToastContainer/>
        </CartContext.Provider>
    );
  }
