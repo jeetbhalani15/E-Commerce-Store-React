@@ -3,10 +3,11 @@ import { useReducer, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../../../Asserts/Images/hero-logo.png";
-
 import { useNavigate } from "react-router";
 import { InputPwd } from "../InputPwd";
 import { useAuth } from "../../../Contexts/Auth-context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function SignUp() {
   const [error, setError] = useState("");
@@ -148,11 +149,27 @@ export function SignUp() {
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
         navigate("/ProductListing");
-        alert("Account Made Successfully!!!");
+        toast.success(' User Sign Up Successfully!!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark"
+          });
       } catch (err) {
-        console.log(formValidation());
-        alert(err);
-        console.log(err);
+        toast.error(' Something went Wrong!!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
       }
     }
   };

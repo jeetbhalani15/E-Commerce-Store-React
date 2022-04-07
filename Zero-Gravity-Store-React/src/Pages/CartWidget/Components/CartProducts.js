@@ -27,7 +27,7 @@ export function CartProducts({ product }) {
               <span className="bold">{product.Price}</span>
               <small className="qty-name-tag">Qty :</small>
             <div className="add-on-counter">
-              <button onClick={()=> cartDispatch({type:"DECREMENT_QUANTITY" , payload : product})} className="add-on-btns">-</button>
+              <button onClick={()=> cartDispatch({type:"DECREMENT_QUANTITY" , payload : product})} disabled={product.quantity <= 1 && true} className="add-on-btns">-</button>
               <span>{product.quantity}</span>
               <button onClick={()=> cartDispatch({type:"INCREMENT_QUANTITY" , payload : product})}  className="add-on-btns">+</button>
             </div>

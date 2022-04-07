@@ -2,11 +2,12 @@ import "./Login.css";
 import logo from "../../../Asserts/Images/hero-logo.png";
 import { Link } from "react-router-dom";
 import { InputPwd } from "../InputPwd";
-
 import { useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 import axios from "axios";
 import { useAuth } from "../../../Contexts/Auth-context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Login() {
   const { authState, authDispatch } = useAuth();
@@ -53,10 +54,28 @@ export function Login() {
       localStorage.setItem("token", userData.data.encodedToken);
       authDispatch({ type: "LOG_IN", payload: userData.data.encodedToken });
       navigate("/productListing");
-      alert("logged in");
+      toast.success(' Logged In Successfully!!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark"
+        });
     } catch (error) {
       alert(error);
-      console.log(error);
+      toast.error(' Something went Wrong!!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   };
   return (

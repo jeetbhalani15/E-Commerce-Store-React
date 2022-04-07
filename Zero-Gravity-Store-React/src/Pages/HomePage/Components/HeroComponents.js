@@ -10,7 +10,9 @@ import {
     ue_logo,
   }  from "../../../Asserts/index"
  import {Link} from "react-router-dom";
+
  function HeroComponents (){
+     
     return(
         <main>
           <div className="landing-box">

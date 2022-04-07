@@ -22,7 +22,7 @@
     height: 24rem;
     position: relative;
     color: var(--card-text);
-    /* padding: 0 23rem; */
+    border-radius: 10px;
     background-color: var(--card-background-color);
 }
 .game-tag{
@@ -39,6 +39,10 @@
     gap: 1rem;
     bottom: 0%;
     right: 0%;
+}
+.btn:hover{
+    color: rgb(224, 225, 225);
+    transform: scale(1.05);
 }
 .card-header{
     margin-right: 3rem;
