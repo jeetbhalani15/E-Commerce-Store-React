@@ -90,7 +90,9 @@ export function Navigation() {
                   </i>
                 </span>
                 <span>Wishlist</span>
-              </Link>
+              </Link>   
+
+              
             </li>
             <li>
               <Link className="icon-span" to="/Cart">
