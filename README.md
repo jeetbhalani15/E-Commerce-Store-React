@@ -44,7 +44,7 @@
 <a name="tech-stack"/>
 
 ## 💻 Tech Stack
-**Front End:** HTML, CSS
+**Front End:** HTML, CSS, React
 **Hosting:** Github, Netlify
 
 <a name="demo"/>
