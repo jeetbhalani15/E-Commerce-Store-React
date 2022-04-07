@@ -23,7 +23,7 @@
 <br /> 
 
 <p align= "center"> 
-  <a href="https://zero-gravity-store.netlify.app/" target="blank">Go To Website</a> 
+  <a href="https://e-commerce-store-react-2m9hlzmbo-jeetbhalani15.vercel.app/" target="blank">Go To Website</a> 
   |
   <a href="https://github.com/jeetbhalani15/E-Commerce-Store/issues" target="blank">Report Bugs</a> 
   |
