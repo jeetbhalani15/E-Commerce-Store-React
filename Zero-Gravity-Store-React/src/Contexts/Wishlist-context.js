@@ -3,6 +3,8 @@ import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { wishlistReducer } from "../Reducers";
 import { useAuth } from "./Auth-context";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const wishlistContext = createContext();
@@ -27,10 +29,27 @@ const WishlistProvider = ({children})=>{
               type: "ADD_TO_WISHLIST",
               payload: res.data.wishlist,
             });
-            console.log(res.data.wishlist);
+            toast.success(' Added to Wishlist ', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark"
+              });
           } catch (error) {
-            alert(error);
-            console.log(product);
+            toast.error(' Something went Wrong! Please Wait!!', {
+              position: "bottom-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
           }
         } else {
           navigate("/login");
@@ -47,14 +66,33 @@ const WishlistProvider = ({children})=>{
             type: "REMOVE_FROM_WISHLIST",
             payload: res.data.wishlist,
           });
-          console.log("done");
+          toast.success(' Removed From Wishlist', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark"
+            });
         } catch (error) {
-          alert(error);
+          toast.error(' Something went Wrong! Please Wait!!', {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
         }
       };   
     return(
       <wishlistContext.Provider value={{wishlistState,wishlistDispatch, addToWishlist, removeFromWishList}}>
           {children}
+          <ToastContainer/>
       </wishlistContext.Provider>
     );
 }

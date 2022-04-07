@@ -203,6 +203,7 @@ Toggle Button CSS
   position: relative;
   margin-left: 1rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .slider:hover {
   opacity: 1;
@@ -219,6 +220,7 @@ Toggle Button CSS
   background-color: var(--backgorund-color);
   color: var(--text-color);
   font-size: 1.4rem;
+  margin-top: -5rem;
 }
 
 .items {
@@ -231,7 +233,7 @@ Toggle Button CSS
   font-weight: 700;
 }
 .items:hover {
-  background-color: var(--primary-hover);
+  background-color: rgb(202, 170, 111);
 }
 .drawer {
   display: flex;
@@ -318,6 +320,9 @@ a {
   font-size: 26px;
   color: white;
   text-shadow: 0 0px 10px rgb(36, 36, 36);
+}
+.liked{
+  color: red;
 }
 .fa-heart:hover{
   color: red;
