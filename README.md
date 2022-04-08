@@ -64,7 +64,7 @@
 6. Log Out Page (it's on Navigation Bar of the Wishlist Page).
 
 ## 🎖 Key Features
-1. Filter products by prize, ratings and brands.
+1. Filter products by prize, ratings and Genre.
 2. Shows latest products first.
 3. login and signup easily.
 4. search any products by product name.
