@@ -4,8 +4,7 @@ export const wishlistReducer = (state,{type,payload})=>{
             return {...state,   wishlistItems : [...payload]};
         case "REMOVE_FROM_WISHLIST": 
         // const removeFromWishlist = state.wishlistItems.filter((item)=> item._id !== payload._id)
-            return {...state,   wishlistItems : [...payload] };
-        
+            return {...state,   wishlistItems : [...payload] }; 
     
         default:
           return  {...state};

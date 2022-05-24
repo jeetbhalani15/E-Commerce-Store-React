@@ -20,9 +20,8 @@ export const cartReducer = (state,{type,payload})=>{
             return {
                 ...state,
                 cartProducts: state.cartProducts.map((item)=>item._id === payload._id ? {...item, quantity : item.quantity - 1}: item)
-            }    
+            }   
         
-    
         default:
             return{...state};
     }
