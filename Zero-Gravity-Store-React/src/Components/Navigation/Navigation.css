@@ -207,3 +207,11 @@
     top: -13px;
     right: 3%;
   }
+  .menu{
+    display: none;
+    margin-right: -2rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 21px;
+}

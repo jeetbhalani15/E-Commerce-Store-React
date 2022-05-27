@@ -7,12 +7,13 @@ import { useAuth } from "../../Contexts/Auth-context";
 import { useCart } from "../../Contexts/Cart-context";
 import { useWishlist } from "../../Contexts/Wishlist-context";
 
-export function Navigation() {
+export function Navigation({ hideSearch,hideMenu }) {
   const { authState, authDispatch } = useAuth();
   const [search, setSearch] = useState("");
   const { dispatch } = useFliters();
   const { cartState } = useCart();
   const { wishlistState } = useWishlist();
+  const { setShowFilter, showFilter } = useFliters();
   const navigate = useNavigate();
   useEffect(() => {
     const id = setTimeout(() => {
@@ -24,14 +25,23 @@ export function Navigation() {
 
     return () => clearTimeout(id);
   }, [dispatch, search]);
- 
-  const logoutHandler = ()=>{
-    authDispatch({type:"LOG_OUT"})
-    navigate("/logout")
-  }
+
+  const logoutHandler = () => {
+    authDispatch({ type: "LOG_OUT" });
+    navigate("/logout");
+  };
   return (
     <header>
       <div className="container">
+        { hideMenu && (showFilter ? (
+          <div onClick={() => setShowFilter(false)} className="menu">
+            <i className="fa fa-close"></i>
+          </div>
+        ) : (
+          <div onClick={() => setShowFilter(true)} className="menu">
+            <i className="fa fa-bars"></i>
+          </div>
+        ))}
         <div className="hero-logo">
           <div className="logo-mg">
             <img className="logo-img" src={logo} alt="logo" />
@@ -54,7 +64,7 @@ export function Navigation() {
             </li>
           </ul>
         </div>
-        <div className="search-bar activeSearchBa">
+       {true && <div className="search-bar activeSearchBa">
           <button className="search-bar-btn link-no-style" type="submit">
             <i className="fa fa-search"></i>
           </button>
@@ -65,7 +75,7 @@ export function Navigation() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Type to search.."
           />
-        </div>
+        </div>}
         <div className="nav-action-btn">
           <ul className="flex">
             <li className="nav-action-links">
@@ -78,69 +88,101 @@ export function Navigation() {
                 </Link>
               ) : (
                 <>
-                <div className="icon-span" onClick={()=>logoutHandler()}>
-                  <span  className="icon">
-                    <i className="fa fa-user"></i>
-                  </span>
-                  <span>Log Out</span>
+                  <div className="icon-span" onClick={() => logoutHandler()}>
+                    <span className="icon">
+                      <i className="fa fa-user"></i>
+                    </span>
+                    <span className="logout-btn">Log Out</span>
                   </div>
-                  </>
+                </>
               )}
             </li>
             <li>
-              {authState.token 
-              ? 
-              (  <Link className="icon-span" to="/Wishlist">
-                <span className="icon">
-                  <i className="fa fa-heart">
-                    <span style={{display: authState.token &&  wishlistState.wishlistItems.length!== 0 ? "block" : "none" }} className="badge-icon">
-                      {wishlistState.wishlistItems.length}
-                    </span>
-                  </i>
-                </span>
-                <span>Wishlist</span>
-              </Link>  ) 
-              : 
-              (  <Link className="icon-span" to="/login">
-                <span className="icon">
-                  <i className="fa fa-heart">
-                    <span style={{display: authState.token &&  wishlistState.wishlistItems.length!== 0 ? "block" : "none" }} className="badge-icon">
-                      {wishlistState.wishlistItems.length}
-                    </span>
-                  </i>
-                </span>
-                <span>Wishlist</span>
-              </Link>  )}
-             
-
-              
+              {authState.token ? (
+                <Link className="icon-span" to="/Wishlist">
+                  <span className="icon">
+                    <i className="fa fa-heart">
+                      <span
+                        style={{
+                          display:
+                            authState.token &&
+                            wishlistState.wishlistItems.length !== 0
+                              ? "block"
+                              : "none",
+                        }}
+                        className="badge-icon"
+                      >
+                        {wishlistState.wishlistItems.length}
+                      </span>
+                    </i>
+                  </span>
+                  <span>Wishlist</span>
+                </Link>
+              ) : (
+                <Link className="icon-span" to="/login">
+                  <span className="icon">
+                    <i className="fa fa-heart">
+                      <span
+                        style={{
+                          display:
+                            authState.token &&
+                            wishlistState.wishlistItems.length !== 0
+                              ? "block"
+                              : "none",
+                        }}
+                        className="badge-icon"
+                      >
+                        {wishlistState.wishlistItems.length}
+                      </span>
+                    </i>
+                  </span>
+                  <span>Wishlist</span>
+                </Link>
+              )}
             </li>
             <li>
-              {authState.token 
-              ?
-               (   <Link className="icon-span" to="/Cart">
-                <span className="icon">
-                  <i className="fa fa-shopping-cart">
-                    <span style={{display: authState.token && cartState.cartProducts.length!== 0 ? "block" : "none" }} className="badge-icon cart-icon">
-                      {cartState.cartProducts.length}
-                    </span>
-                  </i>
-                </span>
-                <span>Cart</span>
-              </Link>) 
-              : (   <Link className="icon-span" to="/login">
-                <span className="icon">
-                  <i className="fa fa-shopping-cart">
-                    <span style={{display: authState.token &&  cartState.cartProducts.length!== 0 ? "block" : "none" }} className="badge-icon cart-icon">
-                      {cartState.cartProducts.length}
-                    </span>
-                  </i>
-                </span>
-                <span>Cart</span>
-              </Link>)}
-           
+              {authState.token ? (
+                <Link className="icon-span" to="/Cart">
+                  <span className="icon">
+                    <i className="fa fa-shopping-cart">
+                      <span
+                        style={{
+                          display:
+                            authState.token &&
+                            cartState.cartProducts.length !== 0
+                              ? "block"
+                              : "none",
+                        }}
+                        className="badge-icon cart-icon"
+                      >
+                        {cartState.cartProducts.length}
+                      </span>
+                    </i>
+                  </span>
+                  <span>Cart</span>
+                </Link>
+              ) : (
+                <Link className="icon-span" to="/login">
+                  <span className="icon">
+                    <i className="fa fa-shopping-cart">
+                      <span
+                        style={{
+                          display:
+                            authState.token &&
+                            cartState.cartProducts.length !== 0
+                              ? "block"
+                              : "none",
+                        }}
+                        className="badge-icon cart-icon"
+                      >
+                        {cartState.cartProducts.length}
+                      </span>
+                    </i>
+                  </span>
+                  <span>Cart</span>
+                </Link>
+              )}
             </li>
-          
           </ul>
         </div>
         <div className="overlay"></div>

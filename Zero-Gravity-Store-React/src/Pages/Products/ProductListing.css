@@ -388,9 +388,44 @@ a {
   font-family: monospace;
   color: white;
 }
+.menu{
+  display: block;
+  margin-right: -2rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 21px;
+}
 /* 
 @ media screem
 */
+@media screen and (max-width: 970px) {
+  .card-border {
+    max-width: 29%;
+}
+.card-img {
+  position: relative;
+  width: 13rem;
+  height: 16.5rem;
+  border-radius: 8px;
+}
+.tabs{
+  display: none;
+}
+.search-bar-input {
+  width: 22rem;
+}
+.search-bar {
+  margin-left: 3rem;
+}
+.drawer__box1 {
+  margin-top: 2rem;
+}
+.links ul {
+  display: none;
+ 
+}
+}
 @media screen and (max-width: 870px) {
   main {
     width: 60%;
@@ -406,6 +441,9 @@ a {
     height: 64rem;
     opacity: 0.8;
     margin-left: 6rem;
+  }
+  .tabs{
+    display: none;
   }
   .hero-title {
     right: 7%;
@@ -466,11 +504,46 @@ a {
     width: 100%;
   }
   .search-bar {
-    display: none;
-  }
+    width: 38px;
+    display: flex;
+}
+.search-bar-input {
+  width: 10rem;
+}
+  .menu{
+    display: block;
+    margin-right: -2rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 21px;
+}
+.logout-btn{
+  width: 6rem;
+  margin-right: -1rem;
+}
+.bg-color {
+  display: none;
+}
+.icon-span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+.logo-mg {
+  width: 56%;
+}
   .drawer__box1 {
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    background-color: rgb(39, 40, 40);
   }
+  
   .card-border {
     max-width: 100%;
   }

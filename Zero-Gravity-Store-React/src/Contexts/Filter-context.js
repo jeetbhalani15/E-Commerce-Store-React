@@ -1,8 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { filterReducer } from "../Reducers/FilterProductReducer";
 const filterContext = createContext();
 
 const FilterProvider = ({children})=>{
+  const [showFilter, setShowFilter] = useState(true);
   const [filters , dispatch]= useReducer(filterReducer,{
       category:{
         ACTION: false,
@@ -23,6 +24,8 @@ const FilterProvider = ({children})=>{
       <filterContext.Provider value={{
           filters,
           dispatch,
+          showFilter,
+          setShowFilter,
           }}
           >
           {children}
