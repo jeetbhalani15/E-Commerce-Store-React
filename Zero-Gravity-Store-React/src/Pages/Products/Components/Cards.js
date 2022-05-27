@@ -14,9 +14,10 @@ export function Cards({ product }) {
   return (
     <div className="card-vertical-box flex card-border">
       <div className="vertical-card flex">
-        <div className="card-top">
+        <Link to={`/products/${product._id}`}><div className="card-top">
           <img className="card-img" src={product.img} alt="" />
         </div>
+        </Link>
 
         {wishlistState.wishlistItems.find(
           (item) => item._id === product._id

@@ -1,0 +1,38 @@
+
+.product-detail{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 32rem;
+}
+.product-img{
+    display: center;
+    display: flex;
+    justify-content: center;;
+    padding: 10rem;
+}
+.img-sixe{
+  height: 31rem;
+  border-radius: 15px;
+}
+.product-data{
+    color: white;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-right: 25rem ;
+}
+.product-info{
+    width: 49rem;
+    font-size: medium;
+}
+.product-btn{
+    display: flex;
+    gap: 2rem;
+}
+.product-header-txt{
+    color: white;
+    font-size: xx-large;
+    font-family: unset;
+}
