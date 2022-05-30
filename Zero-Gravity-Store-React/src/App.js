@@ -10,15 +10,17 @@ import { Login } from "./Pages/AuthWidget/Login/Login";
 import { SignUp } from "./Pages/AuthWidget/SignUp/SignUp";
 import { Logout } from "./Pages/AuthWidget/Logout/Logout";
 import Mockman from "mockman-js";
+import SingleProductPage from "./Pages/SingleProductPage/SingleProductPage";
 
 function App() {
   return (
     <>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route  path="/ProductListing" element={<ProductListing />} />
+          <Route  path="/products" element={<ProductListing />} />
           <Route  path="/Wishlist" element={<Wishlist />} />
           <Route  path="/Cart" element={<Cart/>} />
+          <Route  path="/products/:productId" element={<SingleProductPage/>} />
           <Route  path="/Login" element={<Login/>}/>
           <Route  path="/SignUp" element={<SignUp/>}/>
           <Route  path="/Logout" element={<Logout/>}/>

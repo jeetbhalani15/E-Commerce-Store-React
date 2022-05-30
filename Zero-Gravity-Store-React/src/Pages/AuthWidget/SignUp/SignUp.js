@@ -148,7 +148,7 @@ export function SignUp() {
         });
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
-        navigate("/ProductListing");
+        navigate("/products");
         toast.success(' User Sign Up Successfully!!', {
           position: "top-center",
           autoClose: 5000,

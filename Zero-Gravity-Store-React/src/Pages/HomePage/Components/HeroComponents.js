@@ -21,7 +21,7 @@ import {
           <div className="hero-title">
                 <h1 className="title-style">WE PLAY GAMES</h1>
                 <small className="word-gap">UTMOST QUALITY IS OUR MOTIVE</small>
-                <button className="hero-btn btn-solid"><Link to="/ProductListing">SHOP NOW</Link></button>
+                <button className="hero-btn btn-solid"><Link to="/products">SHOP NOW</Link></button>
           </div>
         </div>
         <div className="my-card">
@@ -36,7 +36,7 @@ import {
                    <div className="card-end flex">
                        <div className="card-body">Far Cry 6 Standard Edition</div>
                        <div className="card-price my"><span className="tag">-50%</span ><span className="line">₹1,999</span ><span className="bold">₹999</span></div>
-                      <div> <Link to="/ProductListing"><button className="card-btn">Buy Now</button></Link></div>
+                      <div> <Link to="/products"><button className="card-btn">Buy Now</button></Link></div>
                    </div>
                </div>
            </div>
@@ -49,7 +49,7 @@ import {
                    <div className="card-end flex">
                      <div className="card-body">Far Cry 6 Standard Edition</div>
                      <div className="card-price my"><span className="tag">-50%</span ><span className="line">₹1,999</span ><span className="bold">₹999</span></div>
-                     <div> <Link to="/ProductListing"><button className="card-btn">Buy Now</button></Link></div>
+                     <div> <Link to="/products"><button className="card-btn">Buy Now</button></Link></div>
 
                    </div>
                </div>
@@ -63,7 +63,7 @@ import {
                    <div className="card-end flex">
                        <div className="card-body">Far Cry 6 Standard Edition</div>
                        <div className="card-price my"><span className="tag">-50%</span ><span className="line">₹1,999</span ><span className="bold">₹999</span></div>
-                       <div> <Link to="/ProductListing"><button className="card-btn">Buy Now</button></Link></div>
+                       <div> <Link to="/products"><button className="card-btn">Buy Now</button></Link></div>
 
                     </div>
                   </div>
@@ -77,7 +77,7 @@ import {
                       <div className="card-end flex">
                        <div className="card-body">Sifu</div>
                        <div className="card-price my"><span className="tag">-50%</span ><span className="line">₹1,999</span ><span className="bold">₹999</span></div>
-                       <div> <Link to="/ProductListing"> <button className="card-btn">Buy Now</button></Link></div>
+                       <div> <Link to="/products"> <button className="card-btn">Buy Now</button></Link></div>
 
                    </div>
                   </div>
