@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     authDispatch({type : "CHECK_TOKEN", payload : getToken });
 }, [])
   return (
-    <AuthContext.Provider value={{ authState, authDispatch,hideSearch }}>
+    <AuthContext.Provider value={{ authState, authDispatch,hideSearch,getToken }}>
       {children}
       <ToastContainer/>
     </AuthContext.Provider>

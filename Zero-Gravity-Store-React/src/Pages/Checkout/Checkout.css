@@ -1,0 +1,120 @@
+.checkout-main {
+    margin-top: 5.5rem;
+}
+
+.check-head {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-left: 3em;
+    font-size: 3rem;
+}
+
+.checkout-price-container {
+    font-size: medium;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    padding: 13px;
+}
+
+.bolder-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.order {
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+}
+
+.checkout-bill-sec {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 100%;
+    max-width: 25rem;
+}
+
+.check-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addr-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.addr {
+    font-size: .95rem;
+}
+
+.select-addr {
+    margin-top: 6px;
+}
+
+.msg {
+    text-align: center;
+    color: #f75151;
+}
+
+.check-btn {
+    font-size: 1rem;
+    padding: 1rem 0;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    margin-top: 10px;
+}
+
+.check-btn:disabled {
+    color: #b9b8b8;
+    cursor: not-allowed;
+}
+
+.check-btn:hover {
+    background-color: #0505d6;
+}
+
+.addre-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+.checkout{
+    background-color: azure;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 74rem;
+    margin-left: 34rem;
+    border-radius: 8px;
+}
+.addre-detail {
+    display: flex;
+    border: 1px solid #b3b2b2;
+    width: 100%;
+    max-width: 25rem;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 7px;
+}
+
+.add-addr {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.add-addr span {
+    font-size: 2rem;
+}
