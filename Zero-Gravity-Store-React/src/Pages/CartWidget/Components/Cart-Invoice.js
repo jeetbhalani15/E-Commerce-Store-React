@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../../../Contexts/Cart-context";
 
 export const CartInvoice = ()=>{
@@ -63,7 +64,7 @@ export const CartInvoice = ()=>{
               </div>
             </div>
             <div className="cart-btn">
-              <button className="cart-btn">CHECK OUT</button>
+              <Link to={"/checkout"}><button className="cart-btn">CHECK OUT</button></Link>
             </div>
           </div>
         </div>
