@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{ authState, authDispatch, hideSearch }}>
+    <AuthContext.Provider value={{ authState, authDispatch,hideSearch,getToken }}>
       {children}
       <ToastContainer />
     </AuthContext.Provider>

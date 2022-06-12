@@ -23,7 +23,7 @@ export function SignUp() {
     confirmPwdError: "",
   };
 
-  
+
   // error reducer
   const errorReducer = (state, { type, payload }) => {
     switch (type) {
@@ -154,8 +154,19 @@ export function SignUp() {
         });
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
-        navigate("/ProductListing");
-        toast.success(" User Sign Up Successfully!!", {
+        navigate("/products");
+        toast.success(' User Sign Up Successfully!!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark"
+          });
+      } catch (err) {
+        toast.error(' Something went Wrong!!', {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,

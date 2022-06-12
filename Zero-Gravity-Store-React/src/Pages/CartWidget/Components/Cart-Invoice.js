@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../../../Contexts/Cart-context";
 
 export const CartInvoice = () => {
@@ -51,11 +52,8 @@ export const CartInvoice = () => {
             <div className="cart-tax-value">
               <span className="tax-color">Calculated at Checkout</span>
             </div>
-          </div>
-          <hr />
-          <div className="cart-items">
-            <div className="cart-subtotal">
-              <span>Subtotal</span>
+            <div className="cart-btn">
+              <Link to={"/checkout"}><button className="cart-btn">CHECK OUT</button></Link>
             </div>
             <div className="cart-subtotal-value">
               <span className="tax">₹ {discountedTotalCartAmount}.00</span>

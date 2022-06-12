@@ -52,8 +52,20 @@ export function Login() {
       });
       localStorage.setItem("token", userData.data.encodedToken);
       authDispatch({ type: "LOG_IN", payload: userData.data.encodedToken });
-      navigate("/productListing");
-      toast.success(" Logged In Successfully!!", {
+      navigate("/products");
+      toast.success(' Logged In Successfully!!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark"
+        });
+    } catch (error) {
+      alert(error);
+      toast.error(' Something went Wrong!!', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -78,7 +90,7 @@ export function Login() {
     }
   };
 
-  
+
   return (
     <div className="html">
       <div className="background">

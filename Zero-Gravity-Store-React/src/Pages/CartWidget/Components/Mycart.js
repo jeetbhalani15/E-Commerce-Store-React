@@ -35,7 +35,7 @@ export function MyCart() {
             {authState.token ? (
               <>
                 <button class="cart-btn">
-                  <Link to="/productListing">Shop Now</Link>
+                  <Link to="/products">Shop Now</Link>
                 </button>
               </>
             ) : (

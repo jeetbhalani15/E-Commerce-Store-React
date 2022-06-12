@@ -66,7 +66,7 @@ export function Navigation({ hideSearch, hideMenu }) {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/ProductListing">Shop Now</Link>
+              <Link to="/products">Shop Now</Link>
             </li>
           </ul>
         </div>

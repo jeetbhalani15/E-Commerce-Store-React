@@ -8,6 +8,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
     {
       _id: uuid(),
+      id: 1,
       Name: "Aquanox Deep Descent",
       Price: "1139",
       Category: "ACTION",
@@ -19,6 +20,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 2,
       Name: "Cyberpunk 2077",
       Price: "2999",
       Category: "ACTION",
@@ -30,6 +32,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 3,
       Name: "God of War",
       Price: "3299",
       Category: "ACTION",
@@ -41,6 +44,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 4,
       Name: "Dead by Daylight",
       Price: "749",
       Category: "ACTION",
@@ -52,6 +56,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 5,
       Name: "Rise of the Tomb Raider: 20 Year Celebration",
       Price: "999",
       Category: "ACTION",
@@ -63,6 +68,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 6,
       Name: "Far Cry 6",
       Price: "2999",
       Category: "ACTION",
@@ -74,6 +80,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 7,
       Name: "Ghostrunner",
       Price: "2124",
       Category: "ACTION",
@@ -85,6 +92,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 8,
       Name: "Lifeless Planet: Premier Edition",
       Price: "484",
       Category: "ACTION",
@@ -96,6 +104,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 9,
       Name: "Brothers - A Tale of Two Sons",
       Price: "829",
       Category: "ADVENTURE",
@@ -107,6 +116,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 10,
       Name: "Tomb Raider GOTY",
       Price: "899",
       Category: "ADVENTURE",
@@ -118,6 +128,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 11,
       Name: "Starsand",
       Price: "469",
       Category: "ADVENTURE",
@@ -129,6 +140,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 12,
       Name: "Gamedec",
       Price: "1499",
       Category: "ADVENTURE",
@@ -140,6 +152,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 13,
       Name: "Claire de Lune",
       Price: "939",
       Category: "ADVENTURE",
@@ -151,6 +164,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 14,
       Name: "DEATH STRANDING",
       Price: "4173",
       Category: "ADVENTURE",
@@ -162,6 +176,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 15,
       Name: "Amnesia: Rebirth",
       Price: "707",
       Category: "ADVENTURE",
@@ -173,6 +188,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 16,
       Name: "Sheltered",
       Price: "459",
       Category: "STRATEGY",
@@ -184,6 +200,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 17,
       Name: "Tom Clancy’s Rainbow Six Extraction",
       Price: "1999",
       Category: "STRATEGY",
@@ -195,6 +212,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 18,
       Name: "Surviving Mars",
       Price: "699",
       Category: "STRATEGY",
@@ -206,6 +224,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 19,
       Name: "HUMANKIND™",
       Price: "2399",
       Category: "STRATEGY",
@@ -217,6 +236,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 20,
       Name: "War Mongrels",
       Price: "959",
       Category: "STRATEGY",
@@ -228,6 +248,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 21,
       Name: "Farming Simulator 22",
       Price: "2499",
       Category: "STRATEGY",
@@ -239,6 +260,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 22,
       Name: "Lumberjack's Dynasty",
       Price: "589",
       Category: "SIMULATION",
@@ -250,6 +272,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 23,
       Name: "Bridge Constructor: The Walking Dead",
       Price: "349",
       Category: "SIMULATION",
@@ -261,6 +284,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 24,
       Name: "Mind Scanners",
       Price: "165",
       Category: "SIMULATION",
@@ -272,6 +296,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 25,
       Name: "Medieval Dynasty",
       Price: "1490",
       Category: "SIMULATION",
@@ -283,6 +308,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 26,
       Name: "NBA 2K21",
       Price: "3299",
       Category: "SPORTS",
@@ -294,6 +320,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 27,
       Name: "WE ARE FOOTBALL",
       Price: "1580",
       Category: "SPORTS",
@@ -305,6 +332,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 28,
       Name: "OVERPASS™",
       Price: "1117",
       Category: "SPORTS",
@@ -316,6 +344,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 29,
       Name: "Steep: Standard Edition",
       Price: "350",
       Category: "SPORTS",
@@ -327,6 +356,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 30,
       Name: "Dying Light 2 Stay Human",
       Price: "2999",
       Category: "OPEN_WORLD",
@@ -338,6 +368,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 31,
       Name: "EVE Online",
       Price: "2999",
       Category: "OPEN_WORLD",
@@ -349,6 +380,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 32,
       Name: "The Witcher 3: Wild Hunt - Game of the Year Edition",
       Price: "1413",
       Category: "OPEN_WORLD",
@@ -360,6 +392,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 33,
       Name: "Grand Theft Auto V",
       Price: "4899",
       Category: "OPEN_WORLD",
@@ -372,6 +405,7 @@ export const products = [
 
     {
       _id: uuid(),
+      id: 34,
       Name: "War Mongrels",
       Price: "959",
       Category: "FIRST_PERSON",
@@ -383,6 +417,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 35,
       Name: "Mind Scanners",
       Price: "199",
       Category: "FIRST_PERSON",
@@ -394,6 +429,7 @@ export const products = [
     },
     {
       _id: uuid(),
+      id: 36,
       Name: "Rise of the Tomb Raider: 20 Year Celebration",
       Price: "999",
       Category: "FIRST_PERSON",
