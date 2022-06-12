@@ -15,10 +15,12 @@ export function Filter() {
     FIRST_PERSON,
   } = category;
 
+  // handle price change
   const handlePriceChange = (e) => {
     dispatch({ type: "PRICE", payload: e.target.value });
   };
 
+  // handle catergory change
   const handleCategoryChange = (e) => {
     dispatch({ type: "CATEGORY", payload: e.target.value });
   };

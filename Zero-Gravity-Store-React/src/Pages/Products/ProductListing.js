@@ -10,20 +10,20 @@ import { useFliters } from "../../Contexts/Filter-context";
 import { useAuth } from "../../Contexts/Auth-context";
 
 export function ProductListing() {
-  const {Loading}= useProduct();
-  const {showFilter} = useFliters();
-  const {hideSearch,setHideSearch}=useAuth();
-  let hideMenu = true
+  const { Loading } = useProduct();
+  const { showFilter } = useFliters();
+  const { hideSearch, setHideSearch } = useAuth();
+  let hideMenu = true;
   return (
     <>
       <div className="big-wrapper dark">
-        {Loading && <Loader/>}
+        {Loading && <Loader />}
         <Navigation hideMenu={hideMenu} />
         <FliterTabs />
         <main>
           <div className="drawer">
             <div className="drawer__nav">
-              { showFilter && <Filter />}
+              {showFilter && <Filter />}
               <Products />
             </div>
           </div>

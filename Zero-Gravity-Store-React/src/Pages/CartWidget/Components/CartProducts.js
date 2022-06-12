@@ -4,11 +4,10 @@ import { useAuth } from "../../../Contexts/Auth-context";
 import { useWishlist } from "../../../Contexts/Wishlist-context";
 
 export function CartProducts({ product }) {
-  const { cartDispatch , removeFromCart } = useCart();
-  const {authState} = useAuth();
-  const {addToWishlist} = useWishlist();
+  const { cartDispatch, removeFromCart } = useCart();
+  const { authState } = useAuth();
+  const { addToWishlist } = useWishlist();
 
-  
   return (
     <>
       <div className="horizontal-card flex">
@@ -26,18 +25,42 @@ export function CartProducts({ product }) {
               <span className="line">₹2,999</span>
               <span className="bold">{product.Price}</span>
               <small className="qty-name-tag">Qty :</small>
-            <div className="add-on-counter">
-              <button onClick={()=> cartDispatch({type:"DECREMENT_QUANTITY" , payload : product})} disabled={product.quantity <= 1 && true} className="add-on-btns">-</button>
-              <span>{product.quantity}</span>
-              <button onClick={()=> cartDispatch({type:"INCREMENT_QUANTITY" , payload : product})}  className="add-on-btns">+</button>
-            </div>
+              <div className="add-on-counter">
+                <button
+                  onClick={() =>
+                    cartDispatch({
+                      type: "DECREMENT_QUANTITY",
+                      payload: product,
+                    })
+                  }
+                  disabled={product.quantity <= 1 && true}
+                  className="add-on-btns"
+                >
+                  -
+                </button>
+                <span>{product.quantity}</span>
+                <button
+                  onClick={() =>
+                    cartDispatch({
+                      type: "INCREMENT_QUANTITY",
+                      payload: product,
+                    })
+                  }
+                  className="add-on-btns"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
           <div>
             <small>Sale ends 2/10/2022 at 9:30 PM</small>
           </div>
           <div className="action-btn">
-            <button onClick={()=>addToWishlist(product)} className="btn btn-solid">
+            <button
+              onClick={() => addToWishlist(product)}
+              className="btn btn-solid"
+            >
               <i className="fa fa-plus-circle"></i>Move to wishlist
             </button>
             <button

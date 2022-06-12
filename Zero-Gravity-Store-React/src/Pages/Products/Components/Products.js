@@ -15,6 +15,7 @@ export function Products() {
   const { productData, Loading, Error } = useProduct();
   const { filters } = useFliters();
 
+  // all filter states
   const searchResult = searchFromProducts(productData, filters.searchQuery);
   const filteredCategory = filterByCategory(searchResult, filters.category);
   const filteredRatings = filterByRatings(filteredCategory, filters.ratings);

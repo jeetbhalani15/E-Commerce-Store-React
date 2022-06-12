@@ -7,7 +7,7 @@ import { useAuth } from "../../Contexts/Auth-context";
 import { useCart } from "../../Contexts/Cart-context";
 import { useWishlist } from "../../Contexts/Wishlist-context";
 
-export function Navigation({ hideSearch,hideMenu }) {
+export function Navigation({ hideSearch, hideMenu }) {
   const { authState, authDispatch } = useAuth();
   const [search, setSearch] = useState("");
   const { dispatch } = useFliters();
@@ -15,6 +15,9 @@ export function Navigation({ hideSearch,hideMenu }) {
   const { wishlistState } = useWishlist();
   const { setShowFilter, showFilter } = useFliters();
   const navigate = useNavigate();
+
+
+  // useeffect debounce search
   useEffect(() => {
     const id = setTimeout(() => {
       dispatch({
@@ -30,18 +33,21 @@ export function Navigation({ hideSearch,hideMenu }) {
     authDispatch({ type: "LOG_OUT" });
     navigate("/logout");
   };
+
+  
   return (
     <header>
       <div className="container">
-        { hideMenu && (showFilter ? (
-          <div onClick={() => setShowFilter(false)} className="menu">
-            <i className="fa fa-close"></i>
-          </div>
-        ) : (
-          <div onClick={() => setShowFilter(true)} className="menu">
-            <i className="fa fa-bars"></i>
-          </div>
-        ))}
+        {hideMenu &&
+          (showFilter ? (
+            <div onClick={() => setShowFilter(false)} className="menu">
+              <i className="fa fa-close"></i>
+            </div>
+          ) : (
+            <div onClick={() => setShowFilter(true)} className="menu">
+              <i className="fa fa-bars"></i>
+            </div>
+          ))}
         <div className="hero-logo">
           <div className="logo-mg">
             <img className="logo-img" src={logo} alt="logo" />
@@ -64,18 +70,20 @@ export function Navigation({ hideSearch,hideMenu }) {
             </li>
           </ul>
         </div>
-       {true && <div className="search-bar activeSearchBa">
-          <button className="search-bar-btn link-no-style" type="submit">
-            <i className="fa fa-search"></i>
-          </button>
-          <input
-            className="search-bar-input"
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Type to search.."
-          />
-        </div>}
+        {true && (
+          <div className="search-bar activeSearchBa">
+            <button className="search-bar-btn link-no-style" type="submit">
+              <i className="fa fa-search"></i>
+            </button>
+            <input
+              className="search-bar-input"
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Type to search.."
+            />
+          </div>
+        )}
         <div className="nav-action-btn">
           <ul className="flex">
             <li className="nav-action-links">

@@ -6,8 +6,8 @@ import logo from "../../../Asserts/Images/hero-logo.png";
 import { useNavigate } from "react-router";
 import { InputPwd } from "../InputPwd";
 import { useAuth } from "../../../Contexts/Auth-context";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function SignUp() {
   const [error, setError] = useState("");
@@ -23,6 +23,8 @@ export function SignUp() {
     confirmPwdError: "",
   };
 
+  
+  // error reducer
   const errorReducer = (state, { type, payload }) => {
     switch (type) {
       case "SHOW_FIRST_N_ERROR":
@@ -56,6 +58,8 @@ export function SignUp() {
     confirmPassword: "",
   };
 
+
+  // form reducer
   const formReducer = (state, { type, payload }) => {
     switch (type) {
       case "SET_FIRST_NAME":
@@ -75,6 +79,8 @@ export function SignUp() {
 
   const [formState, formDispatch] = useReducer(formReducer, formInitialState);
 
+
+  // form validations
   const formValidation = () => {
     let errFlag = true;
     if (
@@ -133,13 +139,13 @@ export function SignUp() {
     return errFlag;
   };
 
+  // sign up handler
   const signupHandler = async (e) => {
     e.preventDefault();
     setError("");
     if (formValidation()) {
       console.log("hi");
       try {
-        console.log("try");
         const userData = await axios.post(`/api/auth/signup`, {
           firstName: formState.firstName,
           lastName: formState.lastName,
@@ -149,18 +155,7 @@ export function SignUp() {
         localStorage.setItem("token", userData.data.encodedToken);
         authDispatch({ type: "SIGN_UP", payload: userData.data.encodedToken });
         navigate("/ProductListing");
-        toast.success(' User Sign Up Successfully!!', {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark"
-          });
-      } catch (err) {
-        toast.error(' Something went Wrong!!', {
+        toast.success(" User Sign Up Successfully!!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -169,7 +164,18 @@ export function SignUp() {
           draggable: true,
           progress: undefined,
           theme: "dark",
-          });
+        });
+      } catch (err) {
+        toast.error(" Something went Wrong!!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       }
     }
   };

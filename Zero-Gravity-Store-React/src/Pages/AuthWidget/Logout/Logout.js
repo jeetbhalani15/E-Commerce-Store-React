@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import { Footer } from "../../../Components/Footer/Footer";
 import { Navigation } from "../../../Components/Navigation/Navigation";
 import { useAuth } from "../../../Contexts/Auth-context";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Logout.css";
-
 
 export function Logout() {
   const { authState, authDispatch } = useAuth();

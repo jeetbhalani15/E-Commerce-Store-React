@@ -9,8 +9,9 @@ export function Cards({ product }) {
   const { authState } = useAuth();
   const { cartState, addToCart } = useCart();
   const { wishlistState, wishlistDispatch, addToWishlist } = useWishlist();
-  const liked =  wishlistState.wishlistItems.find(
-    (item) => item._id === product._id)
+  const liked = wishlistState.wishlistItems.find(
+    (item) => item._id === product._id
+  );
   return (
     <div className="card-vertical-box flex card-border">
       <div className="vertical-card flex">
@@ -21,20 +22,21 @@ export function Cards({ product }) {
         {wishlistState.wishlistItems.find(
           (item) => item._id === product._id
         ) ? (
-          <span onClick={() => removeFromWishlist(product)} className={`hearts-icon ${liked && "liked"}`}>
+          <span
+            onClick={() => removeFromWishlist(product)}
+            className={`hearts-icon ${liked && "liked"}`}
+          >
             <i className="fa fa-heart"></i>
           </span>
         ) : (
-          <span onClick={() => addToWishlist(product)} className={`hearts-icon ${liked && "liked"}`}>
+          <span
+            onClick={() => addToWishlist(product)}
+            className={`hearts-icon ${liked && "liked"}`}
+          >
             <i className="fa fa-heart"></i>
           </span>
         )}
-        {/* <span
-          onClick={() => addToWishlist(product)}
-          className="hearts-icon"
-        >
-          <i className="fa fa-heart"></i>
-        </span> */}
+
         <div className="card-end flex">
           <div className="card-body">{product.Name}</div>
           <div className="ratings">
