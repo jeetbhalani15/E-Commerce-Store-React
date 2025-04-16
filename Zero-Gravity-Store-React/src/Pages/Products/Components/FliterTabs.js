@@ -1,51 +1,54 @@
 import { useFliters } from "../../../Contexts/Filter-context";
+
 export function FliterTabs() {
   const {
-    filters: { price, ratings, sortBy, category },
+    filters: { sortBy },
     dispatch,
   } = useFliters();
+
+  const handleSort = (value) => {
+    dispatch({ type: "SORT", payload: value });
+  };
+
   return (
-    <div className="tabs">
-      <div className="div">
-        <h1>Sort By</h1>
+    <div className="sort-container">
+      <div className="sort-header">
+        <h2 className="sort-title">Sort By</h2>
+        <div className="sort-divider"></div>
       </div>
-      <div className="sort-btn">
+      
+      <div className="sort-options">
         <button
-          onClick={() =>
-            dispatch({ type: "SORT", payload: "PRICE_HIGH_TO_LOW" })
-          }
-          className="tab-btn"
+          onClick={() => handleSort("PRICE_HIGH_TO_LOW")}
+          className={`sort-button ${sortBy === "PRICE_HIGH_TO_LOW" ? "active" : ""}`}
         >
-          Price High to Low
+          <i className="fa fa-arrow-down"></i>
+          <span>Price: High to Low</span>
         </button>
-      </div>
-      <div className="sort-btn">
+
         <button
-          onClick={() =>
-            dispatch({ type: "SORT", payload: "PRICE_LOW_TO_HIGH" })
-          }
-          className="tab-btn"
+          onClick={() => handleSort("PRICE_LOW_TO_HIGH")}
+          className={`sort-button ${sortBy === "PRICE_LOW_TO_HIGH" ? "active" : ""}`}
         >
-          Price Low to High
+          <i className="fa fa-arrow-up"></i>
+          <span>Price: Low to High</span>
         </button>
-      </div>
-      <div className="sort-btn">
+
         <button
-          onClick={() =>
-            dispatch({ type: "SORT", payload: "RATINGS_HIGH_TO_LOW" })
-          }
-          className="tab-btn"
+          onClick={() => handleSort("RATINGS_HIGH_TO_LOW")}
+          className={`sort-button ${sortBy === "RATINGS_HIGH_TO_LOW" ? "active" : ""}`}
         >
-          Ratings High to Low
+          <i className="fa fa-star"></i>
+          <span>Ratings: High to Low</span>
         </button>
-      </div>
-      <div
-        onClick={() =>
-          dispatch({ type: "SORT", payload: "RATINGS_LOW_TO_HIGH" })
-        }
-        className="sort-btn"
-      >
-        <button className="tab-btn">Ratings Low to High</button>
+
+        <button
+          onClick={() => handleSort("RATINGS_LOW_TO_HIGH")}
+          className={`sort-button ${sortBy === "RATINGS_LOW_TO_HIGH" ? "active" : ""}`}
+        >
+          <i className="fa fa-star-o"></i>
+          <span>Ratings: Low to High</span>
+        </button>
       </div>
     </div>
   );
