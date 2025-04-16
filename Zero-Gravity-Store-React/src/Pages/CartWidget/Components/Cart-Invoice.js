@@ -14,56 +14,90 @@ export const CartInvoice = () => {
   const cartAmount = (pre, crr) => pre + crr.quantity * crr.Price;
   const totalCartAmount = cartState.cartProducts.reduce(cartAmount, 0);
 
+  const formatPrice = (amount) => {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: 0
+    }).format(amount);
+  };
+
   // Coupon Discount
-  let couponPrice = 750;
-  let discountedTotalCartAmount;
-  if (totalCartAmount >= 999) {
-    discountedTotalCartAmount = totalCartAmount - couponPrice;
-  } else discountedTotalCartAmount = totalCartAmount;
+  const couponPrice = 750;
+  const discountedTotalCartAmount = totalCartAmount >= 999 
+    ? totalCartAmount - couponPrice 
+    : totalCartAmount;
+
+  const summaryItems = [
+    {
+      label: "Price",
+      value: formatPrice(totalCartAmount),
+      icon: "fa-tag"
+    },
+    {
+      label: "Coupon Discount",
+      value: `- ${formatPrice(couponPrice)}`,
+      icon: "fa-ticket",
+      highlight: true
+    },
+    {
+      label: "Taxes",
+      value: "Calculated at Checkout",
+      icon: "fa-receipt",
+      isInfo: true
+    }
+  ];
 
   return (
     <div className="cart-summary-content">
       <div className="cart-summary">
         <div className="cart-summary-header">
-          <h1>Games and Apps Summary</h1>
-          <span className="quantity-box">{totalItemsInCart}</span>
+          <div className="summary-title">
+            <i className="fa fa-shopping-cart"></i>
+            <h2>Order Summary</h2>
+          </div>
+          <div className="items-badge">
+            <span>{totalItemsInCart}</span>
+            <small>item</small>
+          </div>
         </div>
+
         <div className="cart-elements">
-          <div className="cart-items">
-            <div className="cart-price">
-              <span>Price</span>
+          {summaryItems.map((item, index) => (
+            <div key={index} className="summary-item">
+              <div className="summary-item-label">
+                <i className={`fa ${item.icon}`}></i>
+                <span>{item.label}</span>
+              </div>
+              <div className={`summary-item-value ${item.highlight ? 'highlight' : ''} ${item.isInfo ? 'info' : ''}`}>
+                {item.value}
+              </div>
             </div>
-            <div className="cart-price-value">
-              <span>₹{totalCartAmount}.00</span>
+          ))}
+
+          <div className="summary-divider">
+            <span>Final Price</span>
+          </div>
+
+          <div className="summary-item total">
+            <div className="summary-item-label">
+              <i className="fa fa-wallet"></i>
+              <span>Total Amount</span>
+            </div>
+            <div className="summary-item-value highlight">
+              {formatPrice(discountedTotalCartAmount)}
             </div>
           </div>
-          <div className="cart-items">
-            <div className="cart-coupon">
-              <span>Coupon Discount</span>
+
+          <div className="cart-actions">
+            <Link to="/checkout" className="checkout-button">
+              <i className="fa fa-lock"></i>
+              <span>Secure Checkout</span>
+            </Link>
+            <div className="secure-info">
+              <i className="fa fa-shield-alt"></i>
+              <span>Secure payment & data encryption</span>
             </div>
-            <div className="cart-coupon-value">
-              <span>- ₹ 750.00</span>
-            </div>
-          </div>
-          <div className="cart-items">
-            <div className="cart-tax">
-              <span>Taxes</span>
-            </div>
-            <div className="cart-tax-value">
-              <span className="tax-color">Calculated at Checkout</span>
-            </div>
-          </div>
-          <hr />
-          <div className="cart-items">
-            <div className="cart-subtotal">
-              <span>Subtotal</span>
-            </div>
-            <div className="cart-subtotal-value">
-              <span className="tax">₹ {discountedTotalCartAmount}.00</span>
-            </div>
-          </div>
-          <div className="cart-btn">
-            <Link to={'/checkout'}><button className="cart-btn">CHECK OUT</button></Link>
           </div>
         </div>
       </div>
