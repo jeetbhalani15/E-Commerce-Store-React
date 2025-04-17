@@ -275,7 +275,7 @@ a {
 }
 .product-space {
   flex-wrap: wrap;
-  padding: 4rem;
+  padding: 2rem;
   width: inherit;
   display: flex;
   justify-content: flex-start;
