@@ -58,7 +58,7 @@ export const CartInvoice = () => {
           </div>
           <div className="items-badge">
             <span>{totalItemsInCart}</span>
-            <small>item</small>
+            <small> item</small>
           </div>
         </div>
 

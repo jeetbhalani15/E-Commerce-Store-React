@@ -23,7 +23,7 @@ button {
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
-  backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(8px) saturate(155%);
 }
 
@@ -53,11 +53,6 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 116, 228, 0.03) 0%,
-    rgba(255, 62, 157, 0.03) 100%
-  );
   pointer-events: none;
 }
 
@@ -139,12 +134,11 @@ button {
   height: 100%;
   width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(0, 116, 228, 0.3));
-  transition: filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-brand:hover .brand-logo img {
-  filter: drop-shadow(0 0 12px rgba(0, 116, 228, 0.5));
+  transform: scale(1.05);
 }
 
 .brand-text {
@@ -194,7 +188,6 @@ button {
   background: #0074e4;
   border-radius: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 0 8px rgba(0, 116, 228, 0.5);
 }
 
 .nav-brand:hover .brand-subtitle {
@@ -251,10 +244,9 @@ button {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #0074e4, #00a3ff);
+  background: #0074e4;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
-  box-shadow: 0 0 8px rgba(0, 116, 228, 0.3);
 }
 
 .nav-link:hover {
@@ -315,8 +307,7 @@ button {
 
 .search-input:focus {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(0, 116, 228, 0.5);
-  box-shadow: 0 0 0 2px rgba(0, 116, 228, 0.15);
+  border-color: #0074e4;
   outline: none;
 }
 
@@ -409,9 +400,8 @@ button {
   border-radius: 10px;
   
   /* Colors and Effects */
-  background: linear-gradient(135deg, #0074e4 0%, #00a3ff 100%);
+  background: #0074e4;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 116, 228, 0.3);
   
   /* Typography */
   font-size: 0.75rem;
@@ -434,28 +424,16 @@ button {
 
 .nav-action-link:hover .nav-badge {
   transform: scale(1.15) translateY(-1px);
-  filter: brightness(1.2);
-  box-shadow: 0 4px 12px rgba(0, 116, 228, 0.4);
 }
 
 /* Cart Badge Specific */
 .nav-action-link[href*="Cart"] .nav-badge {
-  background: linear-gradient(135deg, #ff3e3e 0%, #ff6b6b 100%);
-  box-shadow: 0 2px 8px rgba(255, 62, 62, 0.3);
-}
-
-.nav-action-link[href*="Cart"]:hover .nav-badge {
-  box-shadow: 0 4px 12px rgba(255, 62, 62, 0.4);
+  background: #ff3e3e;
 }
 
 /* Wishlist Badge Specific */
 .nav-action-link[href*="Wishlist"] .nav-badge {
-  background: linear-gradient(135deg, #ff3e9d 0%, #ff6bc6 100%);
-  box-shadow: 0 2px 8px rgba(255, 62, 157, 0.3);
-}
-
-.nav-action-link[href*="Wishlist"]:hover .nav-badge {
-  box-shadow: 0 4px 12px rgba(255, 62, 157, 0.4);
+  background: #ff3e9d;
 }
 
 /* Animation Keyframes */
@@ -629,7 +607,7 @@ button {
     width: 100%;
     text-align: center;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(23, 25, 35, 0.95);
     border-radius: 8px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -637,13 +615,11 @@ button {
 
   .nav-link:hover {
     transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(23, 25, 35, 0.98);
   }
 
   .nav-link.active {
     background: rgba(0, 116, 228, 0.15);
-    box-shadow: 0 4px 12px rgba(0, 116, 228, 0.1);
   }
 
   .nav-link::before {
@@ -670,7 +646,7 @@ button {
     justify-content: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(23, 25, 35, 0.95);
     border-radius: 8px;
   }
 

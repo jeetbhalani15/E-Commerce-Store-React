@@ -106,7 +106,7 @@ export const CheckOutPage = () => {
           prefill: {
             name: "Madanlal Mithaivala",
             email: "madanlal@gmail.com",
-            contact: "6355643681",
+            contact: "9429537036",
           },
           theme: {
             color: "#528FF0",

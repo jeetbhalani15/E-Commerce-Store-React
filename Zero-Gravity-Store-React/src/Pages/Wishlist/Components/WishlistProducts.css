@@ -121,7 +121,6 @@
 }
 
 .price-tag {
-  background: linear-gradient(135deg, #ff3e3e 0%, #ff6b6b 100%);
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   color: #fff;

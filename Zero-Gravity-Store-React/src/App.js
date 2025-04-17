@@ -16,31 +16,74 @@ import { ProfileInfo } from "./Pages/Profile/Components/ProfileInfo";
 import { Addresses } from "./Pages/Profile/Components/Address";
 import { OrderDetails } from "./Pages/Profile/Components/OrderDetails";
 import { CheckOutPage } from "./Pages/Checkout/Checkout";
+import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+// Wrapper components with ErrorBoundary for critical features
+const SafeProductPage = () => (
+  <ErrorBoundary>
+    <SingleProductPage />
+  </ErrorBoundary>
+);
+
+const SafeCart = () => (
+  <ErrorBoundary>
+    <Cart />
+  </ErrorBoundary>
+);
+
+const SafeCheckout = () => (
+  <ErrorBoundary>
+    <CheckOutPage />
+  </ErrorBoundary>
+);
+
+const SafeProfile = () => (
+  <ErrorBoundary>
+    <ProfilePage />
+  </ErrorBoundary>
+);
 
 function App() {
   return (
     <>
+      <ErrorBoundary>
+        <Navigation />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route  path="/products" element={<ProductListing />} />
-          <Route  path="/Wishlist" element={<Wishlist />} />
-          <Route  path="/Cart" element={<Cart/>} />
-          <Route  path="/products/:productId" element={<SingleProductPage/>} />
-          <Route  path="/Login" element={<Login/>}/>
-          <Route  path="/SignUp" element={<SignUp/>}/>
-          <Route  path="/Logout" element={<Logout/>}/>
-          <Route  path="/mock" element={<Mockman/>}/>
-          <Route path="/checkout" element={<CheckOutPage />} />
+          <Route path="/products" element={<ProductListing />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/Cart" element={<SafeCart />} />
+          <Route path="/products/:productId" element={<SafeProductPage />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Logout" element={<Logout />} />
+          <Route path="/mock" element={<Mockman />} />
+          <Route path="/checkout" element={<SafeCheckout />} />
 
-        <Route path="/profile/" element={<ProfilePage />} >
-          <Route path="" element={<ProfileInfo />} />
-          <Route path="address" element={<Addresses />} />
-          <Route path="order" element={<OrderDetails />} />
-        </Route>
-
+          <Route path="/profile/" element={<SafeProfile />}>
+            <Route path="" element={<ProfileInfo />} />
+            <Route path="address" element={<Addresses />} />
+            <Route path="order" element={<OrderDetails />} />
+          </Route>
         </Routes>
-         
+        <Footer />
+      </ErrorBoundary>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        limit={3}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        enableMultiContainer={false}
+      />
     </>
   );
 }
