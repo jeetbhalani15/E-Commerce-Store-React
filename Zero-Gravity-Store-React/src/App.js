@@ -68,7 +68,6 @@ function App() {
             <Route path="order" element={<OrderDetails />} />
           </Route>
         </Routes>
-        <Footer />
       </ErrorBoundary>
       <ToastContainer
         position="bottom-right"
