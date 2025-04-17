@@ -33,7 +33,7 @@ export const SingleProductCard = ()=>{
                   <span className="line">₹1,999</span>
                   <span className="bold">{currentProduct.Price}</span>
                 </div>
-                <div><small>Sale ends 2/10/2022 at 9:30 PM</small></div>
+                <div><small>Sale ends 5/10/2025 at 9:30 PM</small></div>
                 <div className="product-btn">
 
                {cartState.cartProducts.find((item) => item._id === currentProduct._id) ? (

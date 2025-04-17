@@ -65,7 +65,7 @@ export function CartProducts({ product }) {
         </div>
 
         <div className="item-footer">
-          <small>Sale ends 2/10/2022 at 9:30 PM</small>
+          <small>Sale ends 5/10/2025 at 9:30 PM</small>
           <div className="item-actions">
             <button onClick={handleMoveToWishlist} className="btn-wishlist">
               Move to Wishlist
