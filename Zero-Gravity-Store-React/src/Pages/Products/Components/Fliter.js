@@ -1,10 +1,13 @@
 import { useFliters } from "../../../Contexts/Filter-context";
+import { memo, useCallback, useMemo } from 'react';
 
-export function Filter() {
+export const Filter = memo(function Filter() {
   const {
     filters: { price, ratings, sortBy, category },
     dispatch,
   } = useFliters();
+
+  // Memoize category values
   const {
     ACTION,
     ADVENTURE,
@@ -13,56 +16,49 @@ export function Filter() {
     SPORTS,
     OPEN_WORLD,
     FIRST_PERSON,
-  } = category;
+  } = useMemo(() => category, [category]);
 
-  // handle price change
-  const handlePriceChange = (e) => {
+  // Memoize handlers
+  const handlePriceChange = useCallback((e) => {
     dispatch({ type: "PRICE", payload: e.target.value });
-  };
+  }, [dispatch]);
 
-  // Calculate price range percentage for background gradient
-  const calculatePricePercentage = (value) => {
+  const handleCategoryChange = useCallback((e) => {
+    dispatch({ type: "CATEGORY", payload: e.target.value });
+  }, [dispatch]);
+
+  const handleReset = useCallback(() => {
+    dispatch({ type: "RESET" });
+  }, [dispatch]);
+
+  // Memoize calculations
+  const calculatePricePercentage = useCallback((value) => {
     return ((value - 100) / (5000 - 100)) * 100;
-  };
+  }, []);
 
-  const formatPrice = (value) => {
+  const formatPrice = useCallback((value) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
       maximumFractionDigits: 0,
     }).format(value);
-  };
+  }, []);
 
-  const priceMarks = [
+  // Memoize static data
+  const priceMarks = useMemo(() => [
     { value: 100, label: '₹100' },
     { value: 1000, label: '₹1K' },
     { value: 2500, label: '₹2.5K' },
     { value: 5000, label: '₹5K' },
-  ];
+  ], []);
 
-  // handle catergory change
-  const handleCategoryChange = (e) => {
-    dispatch({ type: "CATEGORY", payload: e.target.value });
-  };
-
-  // Helper function to render stars
-  const renderStars = (rating) => {
-    return [...Array(5)].map((_, index) => (
-      <i
-        key={index}
-        className={`fa fa-star ${index < rating ? 'star-filled' : 'star-empty'}`}
-        aria-hidden="true"
-      ></i>
-    ));
-  };
-
-  const ratingOptions = [
+  const ratingOptions = useMemo(() => [
     { value: "4_&_ABOVE", label: "4 Stars & Above", rating: 4 },
     { value: "3_&_ABOVE", label: "3 Stars & Above", rating: 3 },
     { value: "2_&_ABOVE", label: "2 Stars & Above", rating: 2 }
-  ];
+  ], []);
 
-  const genreOptions = [
+  const genreOptions = useMemo(() => [
     { value: "ACTION", label: "Action", icon: "fa-gamepad", checked: ACTION },
     { value: "ADVENTURE", label: "Adventure", icon: "fa-compass", checked: ADVENTURE },
     { value: "STRATEGY", label: "Strategy", icon: "fa-chess-king", checked: STRATEGY },
@@ -70,7 +66,18 @@ export function Filter() {
     { value: "SPORTS", label: "Sports", icon: "fa-basketball-ball", checked: SPORTS },
     { value: "OPEN_WORLD", label: "Open World", icon: "fa-globe-americas", checked: OPEN_WORLD },
     { value: "FIRST_PERSON", label: "First Person", icon: "fa-eye", checked: FIRST_PERSON },
-  ];
+  ], [ACTION, ADVENTURE, STRATEGY, SIMULATION, SPORTS, OPEN_WORLD, FIRST_PERSON]);
+
+  // Memoize renderStars function
+  const renderStars = useCallback((rating) => {
+    return [...Array(5)].map((_, index) => (
+      <i
+        key={index}
+        className={`fa fa-star ${index < rating ? 'star-filled' : 'star-empty'}`}
+        aria-hidden="true"
+      ></i>
+    ));
+  }, []);
 
   const sortOptions = [
     {
@@ -91,7 +98,7 @@ export function Filter() {
         <h2 className="filter-title">Filters</h2>
         <button
           className="filter-reset-btn"
-          onClick={() => dispatch({ type: "RESET" })}
+          onClick={handleReset}
         >
           <i className="fa fa-refresh"></i>
           <span>Reset</span>
@@ -209,4 +216,4 @@ export function Filter() {
       </div>
     </div>
   );
-}
+});

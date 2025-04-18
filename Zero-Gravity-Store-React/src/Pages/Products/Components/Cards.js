@@ -47,7 +47,7 @@ export function Cards({ product }) {
     <div className="game-card">
       <div className="game-card-content">
         <Link to={`/products/${product._id}`} className="game-image-container">
-          <img className="game-image" src={product.img} alt={product.Name} />
+          <img className="game-image" src={product.img} alt={product.Name} loading="lazy" />
           <div className="game-overlay">
             <span className="view-details">View Details</span>
           </div>

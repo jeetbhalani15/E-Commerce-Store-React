@@ -1,14 +1,38 @@
 import { useFliters } from "../../../Contexts/Filter-context";
+import { memo, useCallback, useMemo } from 'react';
 
-export function FliterTabs() {
+export const FliterTabs = memo(function FliterTabs() {
   const {
     filters: { sortBy },
     dispatch,
   } = useFliters();
 
-  const handleSort = (value) => {
+  const handleSort = useCallback((value) => {
     dispatch({ type: "SORT", payload: value });
-  };
+  }, [dispatch]);
+
+  const sortOptions = useMemo(() => [
+    {
+      value: "PRICE_HIGH_TO_LOW",
+      label: "Price: High to Low",
+      icon: "fa-arrow-down"
+    },
+    {
+      value: "PRICE_LOW_TO_HIGH",
+      label: "Price: Low to High",
+      icon: "fa-arrow-up"
+    },
+    {
+      value: "RATINGS_HIGH_TO_LOW",
+      label: "Ratings: High to Low",
+      icon: "fa-star"
+    },
+    {
+      value: "RATINGS_LOW_TO_HIGH",
+      label: "Ratings: Low to High",
+      icon: "fa-star-o"
+    }
+  ], []);
 
   return (
     <div className="sort-container">
@@ -18,38 +42,17 @@ export function FliterTabs() {
       </div>
       
       <div className="sort-options">
-        <button
-          onClick={() => handleSort("PRICE_HIGH_TO_LOW")}
-          className={`sort-button ${sortBy === "PRICE_HIGH_TO_LOW" ? "active" : ""}`}
-        >
-          <i className="fa fa-arrow-down"></i>
-          <span>Price: High to Low</span>
-        </button>
-
-        <button
-          onClick={() => handleSort("PRICE_LOW_TO_HIGH")}
-          className={`sort-button ${sortBy === "PRICE_LOW_TO_HIGH" ? "active" : ""}`}
-        >
-          <i className="fa fa-arrow-up"></i>
-          <span>Price: Low to High</span>
-        </button>
-
-        <button
-          onClick={() => handleSort("RATINGS_HIGH_TO_LOW")}
-          className={`sort-button ${sortBy === "RATINGS_HIGH_TO_LOW" ? "active" : ""}`}
-        >
-          <i className="fa fa-star"></i>
-          <span>Ratings: High to Low</span>
-        </button>
-
-        <button
-          onClick={() => handleSort("RATINGS_LOW_TO_HIGH")}
-          className={`sort-button ${sortBy === "RATINGS_LOW_TO_HIGH" ? "active" : ""}`}
-        >
-          <i className="fa fa-star-o"></i>
-          <span>Ratings: Low to High</span>
-        </button>
+        {sortOptions.map(({ value, label, icon }) => (
+          <button
+            key={value}
+            onClick={() => handleSort(value)}
+            className={`sort-button ${sortBy === value ? "active" : ""}`}
+          >
+            <i className={`fa ${icon}`}></i>
+            <span>{label}</span>
+          </button>
+        ))}
       </div>
     </div>
   );
-}
+});
