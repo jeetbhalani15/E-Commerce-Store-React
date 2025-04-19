@@ -37,8 +37,6 @@
 * [🎖 Key Features](#key-features)
 * [🔮 Future Features](#future-features)
 * [✍️ My learnings](#my-learning)
-* [🙋‍♂️ About Me](#about-me)
-* [🎗️ Acknowledgement](#acknowledgement)
 
 <a name="tech-stack"/>
 
@@ -51,6 +49,7 @@
 - React Icons
 - React Toastify for notifications
 - React Spinners for loading states
+
 **Hosting:** 
 - Github 
 - Vercel
@@ -58,8 +57,11 @@
 <a name="demo"/>
 
 ## Demo
-![gravitystore](image.png)
-![gravitystore](image.png)
+### Landing Page
+![Landing Page](./src/assets/images/landing-v2.png)
+
+### Shop Now Page
+![Shop Now Page](./src/assets/images/shop-now-v2.png)
 
 <a name="key-features"/>
 
