@@ -58,10 +58,10 @@
 
 ## Demo
 ### Landing Page
-![Landing Page](./src/assets/images/landing-v2.png)
+![Landing Page](https://github.com/jeetbhalani15/E-Commerce-Store-React/blob/app-v2/Zero-Gravity-Store-React/src/Asserts/Images/landing-v2.png)
 
 ### Shop Now Page
-![Shop Now Page](./src/assets/images/shop-now-v2.png)
+![Shop Now Page](https://github.com/jeetbhalani15/E-Commerce-Store-React/blob/app-v2/Zero-Gravity-Store-React/src/Asserts/Images/show-now-v2.png)
 
 <a name="key-features"/>
 
