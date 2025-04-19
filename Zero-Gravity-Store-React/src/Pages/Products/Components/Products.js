@@ -14,7 +14,6 @@ import { Loader } from "../../../Components/Loader/Loader";
 export function Products() {
   const { productData, Loading, Error } = useProduct();
   const { filters } = useFliters();
-
   // all filter states
   const searchResult = searchFromProducts(productData, filters.searchQuery);
   const filteredCategory = filterByCategory(searchResult, filters.category);
@@ -26,7 +25,7 @@ export function Products() {
     <div className="product-space">
       {Error && <h1 className="error-msg">{Error}</h1>}
       {finalFiltertedProduct.map((product) => (
-        <Cards key={product._id} product={product} />
+         <Cards key={product._id} product={product} />
       ))}
       ;
     </div>

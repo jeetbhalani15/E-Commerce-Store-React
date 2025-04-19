@@ -2,9 +2,11 @@
     color: var(--text-color);
     font-weight: 600;
   }
+
   .price {
     color: var(--text-color);
   }
+
   .ratings {
     position: absolute;
     top: 62%;
@@ -13,6 +15,7 @@
     padding: 3px;
     border-radius: 3px;
   }
+  
   .line {
     text-decoration: line-through;
     opacity: 1;

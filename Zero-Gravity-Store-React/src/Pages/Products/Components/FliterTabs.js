@@ -48,7 +48,7 @@ export const FliterTabs = memo(function FliterTabs() {
             onClick={() => handleSort(value)}
             className={`sort-button ${sortBy === value ? "active" : ""}`}
           >
-            <i className={`fa ${icon}`}></i>
+             <i className={`fa ${icon}`}></i>
             <span>{label}</span>
           </button>
         ))}

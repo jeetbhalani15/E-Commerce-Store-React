@@ -1,5 +1,6 @@
 import { Response } from "miragejs";
 
+
 /**
  * All the routes related to Category are present here.
  * These are Publicly accessible routes.

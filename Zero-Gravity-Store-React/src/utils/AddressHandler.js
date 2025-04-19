@@ -1,7 +1,6 @@
 import { toast } from "react-toastify";
 import axios from "axios";
 
-
 export const getAddressHandler = async (token, addressDispatch) => {
   try {
     const res = await axios.get("/api/user/address", { headers: { authorization: token,}, });

@@ -27,8 +27,8 @@ export const AddressModal = ({ setShowModal }) => {
     }
 
     const editAddress = () => {
-        editAddressHandler(authState.token, addressData._id, addressData, addressDispatch);
-        setShowModal(false);
+         editAddressHandler(authState.token, addressData._id, addressData, addressDispatch);
+         setShowModal(false);
     }
 
     return (

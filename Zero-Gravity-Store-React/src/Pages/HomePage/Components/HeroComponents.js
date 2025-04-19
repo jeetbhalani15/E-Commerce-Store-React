@@ -16,7 +16,6 @@ import './HeroComponents.css';
 function HeroComponents() {
   const [activeGame, setActiveGame] = useState(0);
   const playerRef = useRef(null);
-  
   const featuredGames = [
     {
       id: 1,
@@ -145,7 +144,7 @@ function HeroComponents() {
           <div id="hero-video"></div>
           <div className="hero-overlay"></div>
         </div>
-        
+      
         <div className="hero-content">
           <div className="hero-info">
             <h1 className="hero-title">{featuredGames[activeGame].title}</h1>

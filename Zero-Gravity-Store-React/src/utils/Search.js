@@ -5,6 +5,7 @@
  * @returns {array} - Filtered array of objects.
  */
 
+
 export const searchFromProducts = (products, searchChar)=>{
     if(!searchChar)
       return products;

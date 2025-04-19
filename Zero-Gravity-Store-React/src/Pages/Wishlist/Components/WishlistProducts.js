@@ -66,7 +66,7 @@ export function WishlistProducts() {
                 onClick={() => removeFromWishList(item)}
                 aria-label="Remove from wishlist"
               >
-                <i className="fa fa-heart"></i>
+                 <i className="fa fa-heart"></i>
               </button>
             </div>
 
@@ -82,7 +82,7 @@ export function WishlistProducts() {
               <div className="wishlist-card-actions">
                 {isInCart(item._id) ? (
                   <Link to="/Cart" className="go-to-cart-button">
-                    <i className="fa fa-shopping-cart"></i>
+                     <i className="fa fa-shopping-cart"></i>
                     View in Cart
                   </Link>
                 ) : (

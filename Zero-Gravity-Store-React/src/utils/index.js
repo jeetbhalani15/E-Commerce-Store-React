@@ -4,6 +4,7 @@ import { filterByRatings } from "./Ratings";
 import { filterByCategory } from "./Category";
 import { SortProducts } from "./Sort";
 
+
 export {searchFromProducts,
         filterByPrice, 
         filterByRatings, 

@@ -5,47 +5,44 @@ export const CartInvoice = () => {
   const { cartState } = useCart();
 
   // Total no of products in cart
-
   const itemsInCart = (pre, crr) => pre + crr.quantity;
   const totalItemsInCart = cartState.cartProducts.reduce(itemsInCart, 0);
 
   // Total Amount in the Cart
-
   const cartAmount = (pre, crr) => pre + crr.quantity * crr.Price;
   const totalCartAmount = cartState.cartProducts.reduce(cartAmount, 0);
 
   const formatPrice = (amount) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
     }).format(amount);
   };
 
   // Coupon Discount
   const couponPrice = 750;
-  const discountedTotalCartAmount = totalCartAmount >= 999 
-    ? totalCartAmount - couponPrice 
-    : totalCartAmount;
+  const discountedTotalCartAmount =
+    totalCartAmount >= 999 ? totalCartAmount - couponPrice : totalCartAmount;
 
   const summaryItems = [
     {
       label: "Price",
       value: formatPrice(totalCartAmount),
-      icon: "fa-tag"
+      icon: "fa-tag",
     },
     {
       label: "Coupon Discount",
       value: `- ${formatPrice(couponPrice)}`,
       icon: "fa-ticket",
-      highlight: true
+      highlight: true,
     },
     {
       label: "Taxes",
       value: "Calculated at Checkout",
       icon: "fa-receipt",
-      isInfo: true
-    }
+      isInfo: true,
+    },
   ];
 
   return (
@@ -69,7 +66,11 @@ export const CartInvoice = () => {
                 <i className={`fa ${item.icon}`}></i>
                 <span>{item.label}</span>
               </div>
-              <div className={`summary-item-value ${item.highlight ? 'highlight' : ''} ${item.isInfo ? 'info' : ''}`}>
+              <div
+                className={`summary-item-value ${
+                  item.highlight ? "highlight" : ""
+                } ${item.isInfo ? "info" : ""}`}
+              >
                 {item.value}
               </div>
             </div>

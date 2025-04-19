@@ -14,5 +14,4 @@ export const filterByRatings=(products,rating)=>{
        return products.filter((item)=> Number(item.ratings) >2);
 
     return products;
-
 }

@@ -5,6 +5,7 @@ import { Loader } from "../Components/Loader/Loader";
 
 const productContext = createContext();
 
+
 const ProductProvider = ({ children }) => {
   const [{ productData, Loading, Error }, dispatch] = useReducer(
     FetchProductReducer,

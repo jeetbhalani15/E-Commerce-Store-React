@@ -36,6 +36,7 @@ export const Filter = memo(function Filter() {
     return ((value - 100) / (5000 - 100)) * 100;
   }, []);
 
+  
   const formatPrice = useCallback((value) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',

@@ -4,14 +4,12 @@
   color: #ffffff;
   min-height: 100vh;
 }
-
 /* Hero Carousel Section */
 .hero-carousel {
   position: relative;
   height: 85vh;
   overflow: hidden;
 }
-
 .hero-background {
   position: absolute;
   top: 0;
@@ -20,7 +18,6 @@
   height: 100%;
   overflow: hidden;
 }
-
 #hero-video {
   position: absolute;
   top: 50%;
@@ -32,7 +29,6 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
-
 #hero-video iframe {
   position: absolute;
   top: 50%;

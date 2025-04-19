@@ -44,8 +44,8 @@ export function ProductListing() {
         <main>
           <div className="drawer">
             <div className="drawer__nav">
-              {showFilter && <SafeFilter />}
-              <SafeProducts />
+               {showFilter && <SafeFilter />}
+               <SafeProducts />
             </div>
           </div>
         </main>

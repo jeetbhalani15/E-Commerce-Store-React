@@ -5,7 +5,6 @@
     padding: 6rem 6px;
 
 }
-
 .pr-content-box {
     display: flex;
     flex-direction: column;
@@ -21,8 +20,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-
 .pr-tab-name {
     padding: 14px 0;
     font-size: 1.2rem;

@@ -10,7 +10,6 @@ const defaultOptions = {
   progress: undefined,
   theme: "dark",
 };
-
 // Success toast
 export const showSuccessToast = (message) => {
   return toast.success(message, {

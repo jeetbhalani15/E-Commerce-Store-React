@@ -24,14 +24,13 @@ export function CartProducts({ product }) {
         <img src={product.img} alt={product.Name} />
         <div className="item-badge">New Release</div>
       </div>
-      
+
       <div className="cart-item-details">
         <div className="item-header">
           <span className="item-category">Base Game</span>
           <h2>{product.Name}</h2>
           <p>{product.info}</p>
         </div>
-
         <div className="item-price">
           <div className="price-details">
             <span className="discount">-50%</span>
@@ -43,20 +42,24 @@ export function CartProducts({ product }) {
             <span>Qty:</span>
             <div className="quantity-control">
               <button
-                onClick={() => cartDispatch({
-                  type: "DECREMENT_QUANTITY",
-                  payload: product,
-                })}
+                onClick={() =>
+                  cartDispatch({
+                    type: "DECREMENT_QUANTITY",
+                    payload: product,
+                  })
+                }
                 disabled={product.quantity <= 1}
               >
                 -
               </button>
               <span>{product.quantity}</span>
               <button
-                onClick={() => cartDispatch({
-                  type: "INCREMENT_QUANTITY",
-                  payload: product,
-                })}
+                onClick={() =>
+                  cartDispatch({
+                    type: "INCREMENT_QUANTITY",
+                    payload: product,
+                  })
+                }
               >
                 +
               </button>

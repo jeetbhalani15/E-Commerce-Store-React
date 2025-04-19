@@ -4,7 +4,6 @@
   font-family: inherit;
   padding: 16px;
 }
-
 .Toastify__toast--success {
   background: linear-gradient(135deg, rgba(0, 183, 74, 0.95), rgba(0, 150, 60, 0.95));
   box-shadow: 0 4px 15px rgba(0, 183, 74, 0.2);

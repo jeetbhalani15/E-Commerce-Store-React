@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { CartProducts } from "./CartProducts";
 import cartempty from "../../../Asserts/Images/cart-empty-removebg-preview.png";
 
-
 export function MyCart() {
   const { cartState } = useCart();
   const { authState } = useAuth();

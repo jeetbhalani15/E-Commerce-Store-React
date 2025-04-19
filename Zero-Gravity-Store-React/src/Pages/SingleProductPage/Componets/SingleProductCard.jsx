@@ -11,7 +11,6 @@ export const SingleProductCard = ()=>{
     console.log(productId)
     const {productData} = useProduct();
     const currentProduct = productData.filter((product) => product._id === productId)
-    
     return(
         <div>
       { currentProduct.map((currentProduct)=>  <div className="product-detail">
@@ -45,7 +44,6 @@ export const SingleProductCard = ()=>{
                 Add To Cart
               </button>
             )}
-
 
 {wishlistState.wishlistItems.find(
           (item) => item._id === currentProduct._id

@@ -1,6 +1,5 @@
 import { useOrder } from "../../../Contexts/Orders-context";
 
-
 export const OrderDetails = () => {
 
     const { orderState } = useOrder();

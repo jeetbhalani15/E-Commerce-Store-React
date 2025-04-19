@@ -39,8 +39,6 @@ export const CheckOutPage = () => {
      discountedTotalCartAmount = Number(totalCartAmount) - Number(couponPrice);
      } else discountedTotalCartAmount = totalCartAmount;
 
-
-
     const loadScript = (src) => {
         return new Promise((resolve) => {
           const script = document.createElement("script");

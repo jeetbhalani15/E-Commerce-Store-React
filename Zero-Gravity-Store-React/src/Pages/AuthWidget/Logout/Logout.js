@@ -11,7 +11,6 @@ export function Logout() {
   return (
     <div className="big-wrapper dark">
       <Navigation />
-
       <main>
         <div class="landing-box">
           <section class="logout-container flex">

@@ -1,4 +1,5 @@
 export const AuthReducer = (state, { type, payload }) => {
+  
   switch (type) {
     case "CHECK_TOKEN":
       return { ...state, token: payload };

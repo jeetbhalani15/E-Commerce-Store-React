@@ -70,7 +70,7 @@ const ErrorBoundary = ({ children }) => {
   };
 
   if (hasError) {
-    return <ErrorFallback error={error} resetErrorBoundary={resetErrorBoundary} />;
+     return <ErrorFallback error={error} resetErrorBoundary={resetErrorBoundary} />;
   }
 
   return children;

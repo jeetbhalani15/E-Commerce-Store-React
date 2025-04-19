@@ -5,6 +5,7 @@
  * @returns {array} - Filtered array of objects.
  */
 
+
  export const filterByPrice = (products,price)=>{
     return products.filter((item)=> Number(item.Price) <= price);
 };

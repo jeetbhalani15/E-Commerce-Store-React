@@ -8,6 +8,7 @@ import { useAuth } from "./Auth-context";
 const AddressContext = createContext();
 const useAddress = () => useContext(AddressContext);
 
+// initial value of address state
 const initialValue = {
     address : [],
 }

@@ -58,7 +58,7 @@ export function Cards({ product }) {
           className={`wishlist-button ${isInWishlist ? 'active' : ''}`}
           aria-label={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
         >
-          <i className="fa fa-heart"></i>
+           <i className="fa fa-heart"></i>
         </button>
 
         <div className="game-info">
@@ -66,7 +66,7 @@ export function Cards({ product }) {
           
           <div className="game-meta">
             <span className="game-rating">
-              <i className="fa fa-star"></i>
+               <i className="fa fa-star"></i>
               {product.ratings}
             </span>
             <span className="game-category">{product.Category}</span>

@@ -5,6 +5,7 @@ import { Navigation } from '../../Components/Navigation/Navigation';
 import { useProduct } from '../../Contexts/Product-context';
 import { SingleProductCard } from './Componets/SingleProductCard';
 
+
 const SingleProductPage = () => {
     const {Loading}= useProduct();
     let hideMenu = true;
@@ -19,5 +20,4 @@ const SingleProductPage = () => {
   </>
   )
 }
-
 export default SingleProductPage

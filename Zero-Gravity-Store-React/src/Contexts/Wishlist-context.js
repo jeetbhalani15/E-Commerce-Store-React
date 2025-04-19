@@ -15,8 +15,6 @@ const WishlistProvider = ({ children }) => {
     wishlistItems: [],
   });
 
-
-
   // ADD_TO_WISHLIST FUNCTION
   const addToWishlist = async (product) => {
     if (authState.token) {

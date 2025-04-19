@@ -14,8 +14,8 @@ const StateProvider = ({ children }) => {
         <FilterProvider>
           <ProductProvider>
             <AddressProvider>
-              <OrderProvider>
-            {children}
+            <OrderProvider>
+             {children}
             </OrderProvider>
             </AddressProvider>
             </ProductProvider>

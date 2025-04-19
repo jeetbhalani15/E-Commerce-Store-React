@@ -20,6 +20,7 @@ import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 // Wrapper components with ErrorBoundary for critical features
 const SafeProductPage = () => (
   <ErrorBoundary>

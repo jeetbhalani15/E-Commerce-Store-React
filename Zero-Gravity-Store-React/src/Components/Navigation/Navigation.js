@@ -154,7 +154,7 @@ export function Navigation({ hideSearch, hideMenu }) {
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
-            <i className={`fa fa-${isMobileMenuOpen ? 'close' : 'bars'}`}></i>
+             <i className={`fa fa-${isMobileMenuOpen ? 'close' : 'bars'}`}></i>
           </button>
         </div>
       </nav>
