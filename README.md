@@ -5,25 +5,25 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/-HTML-orange?style=for-the-badge" alt="SilkShopy issues" alt="SilkShopy issues"/>
-  <img src="https://img.shields.io/badge/-CSS-blue?style=for-the-badge" alt="SilkShopy issues" alt="SilkShopy issues"/>
-  <a href="https://github.com/Jay-Gadhiya/silkshopy/issues" target="blank">
-  <img src="https://img.shields.io/github/issues/Jay-Gadhiya/silkshopy?style=for-the-badge" alt="SilkShopy issues"/>
+  <img src="https://img.shields.io/badge/-HTML-orange?style=for-the-badge" alt="0'Gravity issues" alt="0'Gravity issues issues"/>
+  <img src="https://img.shields.io/badge/-CSS-blue?style=for-the-badge" alt="0'Gravity issues" alt="0'Gravity issues"/>
+  <a href="https://github.com/jeetbhalani15/E-Commerce-Store-React/issues" target="blank">
+  <img src="https://img.shields.io/github/issues/Jay-Gadhiya/silkshopy?style=for-the-badge" alt="0'Gravity issues"/>
   </a>
-  <a href="https://github.com/Jay-Gadhiya/silkshopy/pulls" target="blank">
+  <a href="https://github.com/jeetbhalani15/E-Commerce-Store-React/pulls" target="blank">
   <img src="https://img.shields.io/github/issues-pr/Jay-Gadhiya/silkshopy?color=important&style=for-the-badge" alt="SilkShopy pull-requests"/>
   </a>
   <a href="https://github.com/Jay-Gadhiya/silkshopy/graphs/code-frequency" target="blank">
-  <img src="https://img.shields.io/tokei/lines/github/Jay-Gadhiya/silkshopy?label=total%20lines%20of%20code&color=9cf&style=for-the-badge" alt="SilkShopy total lines of code"/>
+  <img src="https://img.shields.io/tokei/lines/github/Jay-Gadhiya/silkshopy?label=total%20lines%20of%20code&color=9cf&style=for-the-badge" alt="0'Gravity total lines of code"/>
   </a>
 </p>
 <br />
-<h3 align="center"> A 0`Gravity Store to buy our favorite PC games & gaming consoles. Buy All kinds of PC and X-box Games at one place.</h3>
+<h3 align="center"> A 0`Gravity Store v2 to buy our favorite PC games & gaming consoles. Buy All kinds of PC and X-box Games at one place.</h3>
 
 <br /> 
 
 <p align= "center"> 
-  <a href="https://e-commerce-store-react-2m9hlzmbo-jeetbhalani15.vercel.app/" target="blank">Go To Website</a> 
+  <a href="https://e-commerce-store-v2.vercel.app/" target="blank">Go To Website</a> 
   |
   <a href="https://github.com/jeetbhalani15/E-Commerce-Store/issues" target="blank">Report Bugs</a> 
   |
@@ -33,7 +33,6 @@
 
 ## Table of contents
 * [💻 Tech Stack](#tech-stack)
-* [▶️ Demo](#demo)
 * [▶️ Widgets](#demo)
 * [🎖 Key Features](#key-features)
 * [🔮 Future Features](#future-features)
@@ -44,14 +43,23 @@
 <a name="tech-stack"/>
 
 ## 💻 Tech Stack
-**Front End:** HTML, CSS, React
-**Hosting:** Github, Netlify
+**Front End:** 
+- React 18
+- React Router 6
+- Axios for API calls
+- JWT for authentication
+- React Icons
+- React Toastify for notifications
+- React Spinners for loading states
+**Hosting:** 
+- Github 
+- Vercel
 
 <a name="demo"/>
 
 ## Demo
-![gravitystore](https://github.com/jeetbhalani15/E-Commerce-Store/blob/dev/Images/landing%20page%20screenshot.png)
-![gravitystore](https://github.com/jeetbhalani15/E-Commerce-Store/blob/dev/Images/product%20page%20ss.png)
+![gravitystore](image.png)
+![gravitystore](image.png)
 
 <a name="key-features"/>
 
@@ -92,17 +100,8 @@
 * How to structure layout 
 
 
-<a name="about-me"/>
-
-## Hi, I'm Jeet! 👋
-### About Me
-* Hey learners, I'm Jeet Bhalani, [Neog Camp](https://neog.camp/) '2022 NeoGrammer.
 ### Social 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://jeetbhalani-portfolio.netlify.app/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeetbhalani/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/je_et15)
 
-<a name="acknowledgement"/>
 
-## 🎗️ Acknowledgement
-* I wanna thanks to my mentor [Tanay Pratap](https://twitter.com/tanaypratap) & his team for inspiring, guiding and shaping our future.
