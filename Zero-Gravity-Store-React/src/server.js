@@ -1,4 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
+
 import {
   loginHandler,
   signupHandler,
