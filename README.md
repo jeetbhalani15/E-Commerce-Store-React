@@ -8,13 +8,13 @@
   <img src="https://img.shields.io/badge/-HTML-orange?style=for-the-badge" alt="0'Gravity issues" alt="0'Gravity issues issues"/>
   <img src="https://img.shields.io/badge/-CSS-blue?style=for-the-badge" alt="0'Gravity issues" alt="0'Gravity issues"/>
   <a href="https://github.com/jeetbhalani15/E-Commerce-Store-React/issues" target="blank">
-  <img src="https://img.shields.io/github/issues/Jay-Gadhiya/silkshopy?style=for-the-badge" alt="0'Gravity issues"/>
+  <img src="https://img.shields.io/github/issues/jeetbhalani15/E-Commerce-Store-React?style=for-the-badge" alt="0'Gravity issues"/>
   </a>
   <a href="https://github.com/jeetbhalani15/E-Commerce-Store-React/pulls" target="blank">
-  <img src="https://img.shields.io/github/issues-pr/Jay-Gadhiya/silkshopy?color=important&style=for-the-badge" alt="SilkShopy pull-requests"/>
+  <img src="https://img.shields.io/github/issues-pr/jeetbhalani15/E-Commerce-Store-React?color=important&style=for-the-badge" alt="SilkShopy pull-requests"/>
   </a>
-  <a href="https://github.com/Jay-Gadhiya/silkshopy/graphs/code-frequency" target="blank">
-  <img src="https://img.shields.io/tokei/lines/github/Jay-Gadhiya/silkshopy?label=total%20lines%20of%20code&color=9cf&style=for-the-badge" alt="0'Gravity total lines of code"/>
+  <a href="https://github.com/jeetbhalani15/E-Commerce-Store-React/graphs/code-frequency" target="blank">
+  <img src="https://img.shields.io/tokei/lines/github/jeetbhalani15/E-Commerce-Store-React?label=total%20lines%20of%20code&color=9cf&style=for-the-badge" alt="0'Gravity total lines of code"/>
   </a>
 </p>
 <br />
