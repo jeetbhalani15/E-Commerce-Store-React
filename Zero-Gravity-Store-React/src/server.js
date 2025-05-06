@@ -1,4 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
+
 import {
   loginHandler,
   signupHandler,
@@ -80,6 +81,11 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
+      // Passthrough all Razorpay requests
+      this.passthrough("https://api.razorpay.com/**");
+      this.passthrough("https://lumberjack.razorpay.com/**");
+      this.passthrough("https://checkout.razorpay.com/**");
+
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
@@ -114,7 +120,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/user/address", getAddressHandler.bind(this));
       this.post("/user/address", addAddressHandler.bind(this));
       this.post("/user/address/:addressId", updateAddressHandler.bind(this));
-      this.delete("/user/address/:addressId", removeAddressHandler.bind(this))
+      this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
     },
   });
 }

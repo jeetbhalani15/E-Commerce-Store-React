@@ -1,7 +1,6 @@
 .checkout-main {
     margin-top: 5.5rem;
 }
-
 .check-head {
     display: flex;
     justify-content: center;
@@ -9,7 +8,6 @@
     margin-left: 3em;
     font-size: 3rem;
 }
-
 .checkout-price-container {
     font-size: medium;
     display: flex;
@@ -19,7 +17,6 @@
     flex-wrap: wrap;
     padding: 13px;
 }
-
 .bolder-text {
     font-weight: bold;
     font-size: 1.1rem;

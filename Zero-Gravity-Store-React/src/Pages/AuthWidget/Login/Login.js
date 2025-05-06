@@ -24,7 +24,6 @@ export function Login() {
     password: "Abc@1234",
   };
 
-
   // form redcer
   const formReducer = (state, { type, payload }) => {
     switch (type) {
@@ -40,7 +39,6 @@ export function Login() {
   };
 
   const [formState, formDispatch] = useReducer(formReducer, initialState);
-
 
   // login handler
   const LoginHandler = async (e) => {

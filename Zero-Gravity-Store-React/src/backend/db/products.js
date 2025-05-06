@@ -5,6 +5,7 @@ import { v4 as uuid } from "uuid";
  * You can add products of your wish with different attributes
  * */
 
+
 export const products = [
     {
       _id: uuid(),

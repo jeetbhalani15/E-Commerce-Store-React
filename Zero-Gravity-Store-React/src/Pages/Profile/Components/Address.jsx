@@ -18,9 +18,7 @@ export const Addresses = () => {
     const deleteAddress = (addrId) => {
         deleteAddressHandler(authState.token, addrId, addressDispatch);
     }
-
     return (
-
         <>
         {
             showModal
@@ -43,7 +41,6 @@ export const Addresses = () => {
                     ))
 
                 }
-
                 <p onClick={() => setShowModal(true)} className="add-addr"><span>+</span> Add New Address</p>
 
             </div>

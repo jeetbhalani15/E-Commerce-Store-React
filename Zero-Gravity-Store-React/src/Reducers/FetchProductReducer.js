@@ -1,4 +1,5 @@
 export const FetchProductReducer = (state, { type, payload }) => {
+  
   switch (type) {
     case "FETCHING_PRODUCTS":
       return {

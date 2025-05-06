@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
   const CartContext = createContext();
   
   const CartProvider = ({ children }) => {
+
   // DEFINING NAVIGATION & AUTHStATE FOR ADD_TO_CART & REMOVE_CART FUNCS
   const navigate = useNavigate();
   const { authState } = useAuth();
@@ -91,6 +92,7 @@ import "react-toastify/dist/ReactToastify.css";
     }
   };
 
+  
   return (
     <CartContext.Provider
       value={{ cartState, cartDispatch, addToCart, removeFromCart }}>

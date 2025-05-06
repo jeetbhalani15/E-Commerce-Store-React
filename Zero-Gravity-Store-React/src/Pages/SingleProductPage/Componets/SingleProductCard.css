@@ -5,12 +5,14 @@
     align-items: flex-start;
     margin-left: 32rem;
 }
+
 .product-img{
     display: center;
     display: flex;
     justify-content: center;;
     padding: 10rem;
 }
+
 .img-sixe{
   height: 31rem;
   border-radius: 15px;

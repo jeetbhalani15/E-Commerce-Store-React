@@ -5,7 +5,6 @@
     padding: 6rem 6px;
 
 }
-
 .pr-content-box {
     display: flex;
     flex-direction: column;
@@ -14,16 +13,15 @@
     margin-top: 2rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     background-color: white;
+    border-radius: 4px;
 }
 
 .pr-tabs {
     display: flex;
     justify-content: space-between;
 }
-
-
 .pr-tab-name {
-    padding: 5px 0;
+    padding: 14px 0;
     font-size: 1.2rem;
     width: 100%;
     border-bottom: 1px solid black;

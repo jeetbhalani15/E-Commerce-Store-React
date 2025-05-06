@@ -77,7 +77,6 @@ export function SignUp() {
 
   const [formState, formDispatch] = useReducer(formReducer, formInitialState);
 
-  
   // form validations
   const formValidation = () => {
     let errFlag = true;
@@ -177,7 +176,6 @@ export function SignUp() {
       }
     }
   };
-
   return (
     <div className="html">
       <div className="background">

@@ -11,14 +11,14 @@ const AuthProvider = ({ children }) => {
 
   // useeffect for user token
   useEffect(() => {
-    authDispatch({ type: "CHECK_TOKEN", payload: getToken });
+     authDispatch({ type: "CHECK_TOKEN", payload: getToken });
   }, []);
 
 
   return (
     <AuthContext.Provider value={{ authState, authDispatch,hideSearch,getToken }}>
       {children}
-      <ToastContainer />
+       <ToastContainer />
     </AuthContext.Provider>
   );
 };

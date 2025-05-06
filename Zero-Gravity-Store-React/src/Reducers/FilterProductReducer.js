@@ -1,4 +1,5 @@
 export const filterReducer = (state, { type, payload }) => {
+  
   switch (type) {
     case "SEARCH":
       return { ...state, searchQuery: payload };

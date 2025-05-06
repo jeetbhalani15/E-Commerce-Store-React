@@ -10,7 +10,6 @@ export const ProfilePage = () => {
         backgroundColor: isActive ? "#4285F4" : "#fff",
         color: isActive ? "#fff" : "#000",
       });
-
     return (
       <div className="big-wrapper dark">
       <Navigation />
@@ -37,7 +36,6 @@ export const ProfilePage = () => {
             </div>
         </main>
       <Footer />
-    </div>
-        
+    </div>    
     )
 }

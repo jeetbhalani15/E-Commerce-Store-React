@@ -1,6 +1,5 @@
 
 /* HOME PAGE CSS */
-
 .flex{
     display: flex;
     align-items: center;
@@ -61,7 +60,7 @@ landing logo
     font-size: 3rem;
     position: absolute;
     top: 30%;
-    right: 23%;
+    right: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;

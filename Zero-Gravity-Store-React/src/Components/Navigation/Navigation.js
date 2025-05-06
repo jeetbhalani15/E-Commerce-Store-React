@@ -1,6 +1,6 @@
 import "./Navigation.css";
 import logo from "../../Asserts/Images/hero-logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useFliters } from "../../Contexts/Filter-context";
 import { useAuth } from "../../Contexts/Auth-context";
@@ -14,8 +14,24 @@ export function Navigation({ hideSearch, hideMenu }) {
   const { cartState } = useCart();
   const { wishlistState } = useWishlist();
   const { setShowFilter, showFilter } = useFliters();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   // useeffect debounce search
   useEffect(() => {
@@ -34,170 +50,122 @@ export function Navigation({ hideSearch, hideMenu }) {
     navigate("/logout");
   };
 
-  
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header>
-      <div className="container">
-        {hideMenu &&
-          (showFilter ? (
-            <div onClick={() => setShowFilter(false)} className="menu">
-              <i className="fa fa-close"></i>
+    <header className={`nav-header ${isScrolled ? 'scrolled' : ''}`}>
+      <nav className="nav-container">
+        <div className="nav-left">
+          {hideMenu && (
+            <button 
+              className="menu-toggle"
+              onClick={() => setShowFilter(!showFilter)}
+              aria-label="Toggle Menu"
+            >
+              <i className={`fa fa-${showFilter ? 'close' : 'bars'}`}></i>
+            </button>
+          )}
+          
+          <Link to="/" className="nav-brand">
+            <div className="brand-logo">
+              <img src={logo} alt="Zero Gravity Store" />
             </div>
-          ) : (
-            <div onClick={() => setShowFilter(true)} className="menu">
-              <i className="fa fa-bars"></i>
+            <div className="brand-text">
+              <span className="brand-name">ZERO GRAVITY</span>
+              <span className="brand-subtitle">Store</span>
             </div>
-          ))}
-        <div className="hero-logo">
-          <div className="logo-mg">
-            <img className="logo-img" src={logo} alt="logo" />
-          </div>
-          <div className="bg-color">
-            <Link to="/">
-              ZERO
-              <div>GRAVITY</div>
-              <small className="small-txt">Store</small>
+          </Link>
+        </div>
+
+        <div className="nav-center">
+          <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+              Home
+            </Link>
+            <Link to="/products" className={`nav-link ${location.pathname === '/products' ? 'active' : ''}`}>
+              Shop Now
             </Link>
           </div>
+
+          {!hideSearch && (
+            <div className="search-container">
+              <div className="search-bar">
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search games..."
+                  className="search-input"
+                  aria-label="Search games"
+                />
+                <button className="search-button" aria-label="Search">
+                  <i className="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="links">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/products">Shop Now</Link>
-            </li>
-          </ul>
-        </div>
-        {true && (
-          <div className="search-bar activeSearchBa">
-            <button className="search-bar-btn link-no-style" type="submit">
-              <i className="fa fa-search"></i>
-            </button>
-            <input
-              className="search-bar-input"
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Type to search.."
-            />
-          </div>
-        )}
-        <div className="nav-action-btn">
-          <ul className="flex">
-            <li className="nav-action-links">
+
+        <div className="nav-right">
+          <div className={`nav-actions ${isMobileMenuOpen ? 'active' : ''}`}>
+            <div className="nav-action-item">
               {authState.token === null ? (
-                <Link className="icon-span" to="/Login">
-                  <span className="icon">
-                    <i className="fa fa-user"></i>
-                  </span>
-                  <span>login</span>
+                <Link to="/Login" className="nav-action-link">
+                  <i className="fa fa-user"></i>
+                  <span>Login</span>
                 </Link>
               ) : (
-                <>
-                  <div className="icon-span" onClick={() => logoutHandler()}>
-                    <span className="icon">
-                      <i className="fa fa-user"></i>
-                    </span>
-                    <span className="logout-btn">Log Out</span>
-                  </div>
-                </>
+                <button onClick={logoutHandler} className="nav-action-link">
+                  <i className="fa fa-sign-out"></i>
+                  <span>Logout</span>
+                </button>
               )}
-            </li>
-            <li>
-              {authState.token ? (
-                <Link className="icon-span" to="/Wishlist">
-                  <span className="icon">
-                    <i className="fa fa-heart">
-                      <span
-                        style={{
-                          display:
-                            authState.token &&
-                            wishlistState.wishlistItems.length !== 0
-                              ? "block"
-                              : "none",
-                        }}
-                        className="badge-icon"
-                      >
-                        {wishlistState.wishlistItems.length}
-                      </span>
-                    </i>
-                  </span>
-                  <span>Wishlist</span>
-                </Link>
-              ) : (
-                <Link className="icon-span" to="/login">
-                  <span className="icon">
-                    <i className="fa fa-heart">
-                      <span
-                        style={{
-                          display:
-                            authState.token &&
-                            wishlistState.wishlistItems.length !== 0
-                              ? "block"
-                              : "none",
-                        }}
-                        className="badge-icon"
-                      >
-                        {wishlistState.wishlistItems.length}
-                      </span>
-                    </i>
-                  </span>
-                  <span>Wishlist</span>
-                </Link>
-              )}
-            </li>
-            <li>
-              {authState.token ? (
-                <Link className="icon-span" to="/Cart">
-                  <span className="icon">
-                    <i className="fa fa-shopping-cart">
-                      <span
-                        style={{
-                          display:
-                            authState.token &&
-                            cartState.cartProducts.length !== 0
-                              ? "block"
-                              : "none",
-                        }}
-                        className="badge-icon cart-icon"
-                      >
-                        {cartState.cartProducts.length}
-                      </span>
-                    </i>
-                  </span>
-                  <span>Cart</span>
-                </Link>
-              ) : (
-                <Link className="icon-span" to="/login">
-                  <span className="icon">
-                    <i className="fa fa-shopping-cart">
-                      <span
-                        style={{
-                          display:
-                            authState.token &&
-                            cartState.cartProducts.length !== 0
-                              ? "block"
-                              : "none",
-                        }}
-                        className="badge-icon cart-icon"
-                      >
-                        {cartState.cartProducts.length}
-                      </span>
-                    </i>
-                  </span>
-                  <span>Cart</span>
-                </Link>
-              )}
-            </li>
-          </ul>
+            </div>
+
+            <div className="nav-action-item">
+              <Link to={authState.token ? "/Wishlist" : "/login"} className="nav-action-link">
+                <div className="icon-badge">
+                  <i className="fa fa-heart"></i>
+                  {authState.token && wishlistState.wishlistItems.length > 0 && (
+                    <span className="nav-badge">{wishlistState.wishlistItems.length}</span>
+                  )}
+                </div>
+                <span>Wishlist</span>
+              </Link>
+            </div>
+
+            <div className="nav-action-item">
+              <Link to={authState.token ? "/Cart" : "/login"} className="nav-action-link">
+                <div className="icon-badge">
+                  <i className="fa fa-shopping-cart"></i>
+                  {authState.token && cartState.cartProducts.length > 0 && (
+                    <span className="nav-badge">{cartState.cartProducts.length}</span>
+                  )}
+                </div>
+                <span>Cart</span>
+              </Link>
+            </div>
+          </div>
+
+          <button 
+            className="mobile-menu-toggle" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+             <i className={`fa fa-${isMobileMenuOpen ? 'close' : 'bars'}`}></i>
+          </button>
         </div>
-        <div className="overlay"></div>
-        <div className="hamburger-menu">
-          <div className="bar"></div>
-        </div>
-      </div>
+      </nav>
+
+      {isMobileMenuOpen && (
+        <div 
+          className="mobile-overlay" 
+          onClick={toggleMobileMenu}
+          role="presentation"
+        ></div>
+      )}
     </header>
   );
 }

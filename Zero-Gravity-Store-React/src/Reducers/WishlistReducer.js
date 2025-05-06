@@ -1,4 +1,5 @@
 export const wishlistReducer = (state,{type,payload})=>{
+    
     switch (type) {
         case "ADD_TO_WISHLIST":
             return {...state,   wishlistItems : [...payload]};

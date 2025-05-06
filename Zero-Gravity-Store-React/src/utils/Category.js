@@ -8,7 +8,6 @@
 export const filterByCategory = (products,category)=>{
     if(Object.values(category).every((e)=>!e))
         return products;
-    
     return products.filter((item)=> category[item.Category])
 
 }

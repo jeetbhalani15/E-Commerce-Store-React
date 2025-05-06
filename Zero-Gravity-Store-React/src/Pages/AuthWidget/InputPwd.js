@@ -19,7 +19,6 @@ const InputPwd = ({
         onFocus={onFocushandler}
         required
       />
-
       <i
         className={isHidden ? "fa fa-eye-slash" : "fa fa-eye"}
         id="toggle"

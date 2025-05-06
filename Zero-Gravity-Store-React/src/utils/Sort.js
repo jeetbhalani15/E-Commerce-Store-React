@@ -5,6 +5,7 @@
  * @returns {array} - sorted array of objects.
  */
 
+
 export const SortProducts = (products, sortBy)=>{
   
       if(sortBy==="PRICE_HIGH_TO_LOW")

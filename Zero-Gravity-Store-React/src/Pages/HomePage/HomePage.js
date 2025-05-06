@@ -4,7 +4,6 @@ import { Footer } from "../../Components/Footer/Footer";
 import { Navigation } from "../../Components/Navigation/Navigation";
 import { HeroComponents } from "./Components/HeroComponents";
 import "./HomePage.css";
-import { BarLoader, RingLoader, RiseLoader } from "react-spinners";
 import { useAuth } from "../../Contexts/Auth-context";
 
 export function HomePage() {
@@ -14,6 +13,7 @@ export function HomePage() {
   setTimeout(() => {
     setLoading(false);
   }, 4000);
+  
   return (
     <>
       <div className="big-wrapper dark">

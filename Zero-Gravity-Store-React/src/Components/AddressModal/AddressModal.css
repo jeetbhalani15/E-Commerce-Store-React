@@ -4,49 +4,194 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    z-index: 2;
-    background-color: #0a0a0ac0;
+    z-index: 1000;
+    background: rgba(13, 13, 15, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     position: fixed;
     top: 0;
     left: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fill-area {
-    background-color: white;
+    background: rgba(18, 18, 24, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 29rem;
-    padding: 1rem;
+    max-width: 32rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    border-radius: 6px;
+    gap: 1.2rem;
+    border-radius: 12px;
     margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fill-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 116, 228, 0.03) 0%,
+        rgba(255, 62, 157, 0.03) 100%
+    );
+    pointer-events: none;
+}
+
+.fill-area h2 {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
 
 .adrre-input {
     width: 100%;
-    font-size: 1.3rem;
-    padding: 8px;
-    outline-color: cornflowerblue;
-    border: 1px solid blue;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.adrre-input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 116, 228, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 116, 228, 0.1);
+}
+
+.adrre-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .addre-buttons {
     display: flex;
-    gap: 6px;
-    margin-top: 10px;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .fill-btn {
     border: none;
-    font-size: 1.3rem;
-    padding: 7px 8px;
-    background-color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: #0074e4;
     color: white;
-    border-radius: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .fill-btn:hover {
-    background-color: cornflowerblue;
+    background: #0088ff;
+    transform: translateY(-2px);
+}
+
+.addr-operation-btn-sec {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.addr-operation-btn-sec:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fill-area {
+        max-width: 90%;
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .fill-area h2 {
+        font-size: 1.2rem;
+    }
+
+    .adrre-input {
+        font-size: 0.95rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .addre-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .fill-btn,
+    .addr-operation-btn-sec {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fill-area {
+        margin: 0.75rem;
+        padding: 1.25rem;
+    }
+
+    .adrre-input {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Input type number specific styles */
+.adrre-input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.adrre-input[type="number"]::-webkit-outer-spin-button,
+.adrre-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Gaming-specific hover effects */
+.adrre-input:hover {
+    border-color: rgba(103, 117, 255, 0.4);
+    box-shadow: 0 0 15px rgba(103, 117, 255, 0.1);
+}
+
+/* Error state for inputs */
+.adrre-input.error {
+    border-color: rgba(255, 89, 89, 0.5);
+    animation: errorShake 0.5s ease-in-out;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }

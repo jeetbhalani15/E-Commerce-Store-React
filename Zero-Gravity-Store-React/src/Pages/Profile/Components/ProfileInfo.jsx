@@ -1,7 +1,6 @@
 import  '../ProfilePage.css';
 
 export const ProfileInfo = () => {
-
     return (
         <div className="pr-info-main">
             <div className="pr-info">

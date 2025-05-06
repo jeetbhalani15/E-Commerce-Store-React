@@ -1,77 +1,84 @@
 import { useCart } from "../../../Contexts/Cart-context";
-import axios from "axios";
 import { useAuth } from "../../../Contexts/Auth-context";
 import { useWishlist } from "../../../Contexts/Wishlist-context";
+import { showSuccessToast } from "../../../utils/toastUtils";
 
 export function CartProducts({ product }) {
   const { cartDispatch, removeFromCart } = useCart();
   const { authState } = useAuth();
   const { addToWishlist } = useWishlist();
 
+  const handleMoveToWishlist = () => {
+    addToWishlist(product);
+    showSuccessToast("Item moved to wishlist!");
+  };
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(product);
+    showSuccessToast("Item removed from cart!");
+  };
+
   return (
-    <>
-      <div className="horizontal-card flex">
-        <div className="card-header">
-          <img className="cart_img" src={product.img} />
-          <span className="badge flex">New Release</span>
-        </div>
-        <div className="card-text">
-          <span className="game-tag">Base Game</span>
-          <h1>{product.Name}</h1>
+    <div className="cart-item">
+      <div className="cart-item-image">
+        <img src={product.img} alt={product.Name} />
+        <div className="item-badge">New Release</div>
+      </div>
+
+      <div className="cart-item-details">
+        <div className="item-header">
+          <span className="item-category">Base Game</span>
+          <h2>{product.Name}</h2>
           <p>{product.info}</p>
-          <div>
-            <div className="price">
-              <span className="tag">-50%</span>
-              <span className="line">₹2,999</span>
-              <span className="bold">{product.Price}</span>
-              <small className="qty-name-tag">Qty :</small>
-              <div className="add-on-counter">
-                <button
-                  onClick={() =>
-                    cartDispatch({
-                      type: "DECREMENT_QUANTITY",
-                      payload: product,
-                    })
-                  }
-                  disabled={product.quantity <= 1 && true}
-                  className="add-on-btns"
-                >
-                  -
-                </button>
-                <span>{product.quantity}</span>
-                <button
-                  onClick={() =>
-                    cartDispatch({
-                      type: "INCREMENT_QUANTITY",
-                      payload: product,
-                    })
-                  }
-                  className="add-on-btns"
-                >
-                  +
-                </button>
-              </div>
+        </div>
+        <div className="item-price">
+          <div className="price-details">
+            <span className="discount">-50%</span>
+            <span className="original">₹2,999</span>
+            <span className="final">{product.Price}</span>
+          </div>
+
+          <div className="quantity">
+            <span>Qty:</span>
+            <div className="quantity-control">
+              <button
+                onClick={() =>
+                  cartDispatch({
+                    type: "DECREMENT_QUANTITY",
+                    payload: product,
+                  })
+                }
+                disabled={product.quantity <= 1}
+              >
+                -
+              </button>
+              <span>{product.quantity}</span>
+              <button
+                onClick={() =>
+                  cartDispatch({
+                    type: "INCREMENT_QUANTITY",
+                    payload: product,
+                  })
+                }
+              >
+                +
+              </button>
             </div>
           </div>
-          <div>
-            <small>Sale ends 2/10/2022 at 9:30 PM</small>
-          </div>
-          <div className="action-btn">
-            <button
-              onClick={() => addToWishlist(product)}
-              className="btn btn-solid"
-            >
-              <i className="fa fa-plus-circle"></i>Move to wishlist
+        </div>
+
+        <div className="item-footer">
+          <small>Sale ends 5/10/2025 at 9:30 PM</small>
+          <div className="item-actions">
+            <button onClick={handleMoveToWishlist} className="btn-wishlist">
+              Move to Wishlist
             </button>
-            <button
-              onClick={() => removeFromCart(product)}
-              className="btn btn-solid"
-            >
+            <button onClick={handleRemoveFromCart} className="btn-remove">
               Remove
             </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

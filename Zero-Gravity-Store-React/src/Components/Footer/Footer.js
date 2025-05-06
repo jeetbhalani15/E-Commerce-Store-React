@@ -38,7 +38,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="footer-txt">
-          © 2022 | 0`Gravity Store All Rights Resevered.
+          © 2025 | 0`Gravity Store All Rights Resevered.
         </div>
       </div>
     </footer>

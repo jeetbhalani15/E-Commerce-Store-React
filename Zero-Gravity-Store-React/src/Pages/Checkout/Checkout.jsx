@@ -39,8 +39,6 @@ export const CheckOutPage = () => {
      discountedTotalCartAmount = Number(totalCartAmount) - Number(couponPrice);
      } else discountedTotalCartAmount = totalCartAmount;
 
-
-
     const loadScript = (src) => {
         return new Promise((resolve) => {
           const script = document.createElement("script");
@@ -106,7 +104,7 @@ export const CheckOutPage = () => {
           prefill: {
             name: "Madanlal Mithaivala",
             email: "madanlal@gmail.com",
-            contact: "6355643681",
+            contact: "9429537036",
           },
           theme: {
             color: "#528FF0",

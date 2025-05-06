@@ -1,6 +1,7 @@
 import { Response } from "miragejs";
 import { formatDate, requiresAuth } from "../utils/authUtils";
 
+
 /**
  * All the routes related to Cart are present here.
  * These are private routes.
